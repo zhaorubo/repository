@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* 元素选择器 */
+/* p {
+  color: red;
+}
+h1 {
+  color: pink;
+}
+
+p,h1 {
+  color: blue;
+} */
+
+* {
+  color: #87ceed;
+}
+
+.pa {
+  color: pink;
+  background-color: green;
+}
+
+.aa {
+  background-color: yellow;
+}
+
+/* ID选择器 */
+#bigP {
+  font-size: 30px;
+}
+
+/* 后代选择器 */
+
+div p {
+  color: blueviolet;
+  /* background-color: red; */
+}
+
+/* 子代选择器 */
+.box1 > p {
+  color: orange;
+  background-color: skyblue;
+}
+
+/* 相邻选择器 */
+.box2 + p {
+  font-size: 20px;
+  background-color: yellow;
+}
+
+/* 兄弟选择器 */
+.box2 ~ p {
+  font-size: 40px;
+  color: palevioletred;
+  background-color: greenyellow;
+}
+
+/* input 获取焦点时 */
+input:focus {
+  /* 设置轮廓线 */
+  outline: 2px solid red;
+}
+
+/* 结构伪类选择器 */
+.list li:nth-child(3) {
+  color: red;
+  background-color:blanchedalmond;
+}
+
+.box3 span:first-child {
+  color: skyblue;
+  background-color: yellow;
+}
+.box3 p:first-of-type {
+  color: red;
+  background-color: yellow;
+}
+
+/* 伪元素 */
+
+.box4::before {
+  /* 必写属性  值可以为空 用于填写伪元素显示的内容的*/
+    content: "<";
+    /* 修改元素的显示模式为块级元素 */
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: red;
+  }
+  /* 属性选择器 */
+
+div[class] {
+  width: 200px;
+  height: 100px;
+  background-color: pink;
+  border: 1px solid red;
+}
+
+div[class*="aab"] {
+  background-color: blue;
+}
