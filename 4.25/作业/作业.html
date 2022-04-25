@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .list {
+        width: 250px;
+        margin: 0 auto;
+        list-style: none;
+      }
+      .list li {
+        width: 80px;
+        height: 80px;
+        background: url('../../images/sprites.png') no-repeat;
+        border: 1px solid #000;
+        float: left;
+      }
+
+      .list li:first-child {
+        background-position: -110px -10px;
+      }
+
+      .list .twolist {
+        background-position: -7px -108px;
+      }
+      .list li:last-child {
+        background-position: -10px -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li></li>
+      <li class="twolist"></li>
+      <li></li>
+    </ul>
+  </body>
+</html>

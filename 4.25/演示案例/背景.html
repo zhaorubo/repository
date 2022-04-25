@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        margin: 50px auto;
+        width: 600px;
+        height: 600px;
+        border: 5px dashed #000;
+        /* background-image: url('../../images/daren.png');
+        background-repeat: no-repeat;
+        background-size: 200px 200px;
+        background-position: 50% 50%;
+        background-position: left bottom; */
+        background: pink url('../../images/daren.png') no-repeat;
+      }
+
+      .box2 {
+        height: 800px;
+        background-color: aquamarine;
+      }
+
+      /* 第一步
+          写出盒子作为显示精灵图的存储容器 */
+
+      /* 第二步  给每个盒子引入精灵图 */
+
+      /* 第三步
+          给每个盒子设置背景定位
+          */
+      .list {
+        width: 300px;
+        margin: 100px auto;
+      }
+
+      .list li {
+        width: 74px;
+        height: 88px;
+        border: 1px solid #000;
+        list-style: none;
+        background: url('../../images/css_sprites.png') no-repeat;
+      }
+
+      .list li:first-child {
+        background-position: -104px -10px;
+      }
+
+      .list li:nth-child(2) {
+        background-position: -10px -10px;
+      }
+      .list li:nth-child(3) {
+        background-position: -10px -120px;
+      }
+      .list li:last-child {
+        background-position: -198px -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">BOX</div>
+
+    <div class="box2">BOX2</div>
+
+    <ul class="list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </body>
+</html>
