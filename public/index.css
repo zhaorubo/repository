@@ -25,7 +25,7 @@ body {
   display: block;
   width: 150px;
   height: 150px;
-  background: url("/images/preview.gif") -237px -227px no-repeat;
+  background: url("../images/preview.gif") -237px -227px no-repeat;
   border-radius: 50%;
   margin: 50px 0 50px 50px;
 }
