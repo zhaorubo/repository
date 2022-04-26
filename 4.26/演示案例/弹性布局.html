@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .father {
+        height: 500px;
+        display: flex;
+        /* flex-direction: row;
+        flex-wrap: wrap; */
+        /* align-content: space-between; */
+        /* justify-content: center; */
+        align-items: center;
+        /* align-items: center; */
+        background-color: skyblue;
+        border: 5px dashed #000;
+        padding: 10px;
+      }
+      .son {
+        /* width: 100px; */
+        flex-basis: 100px;
+        height: 100px;
+        border: 1px solid red;
+        flex-shrink: 0;
+      }
+
+      .father div:nth-child(2) {
+        flex-grow: 1;
+        align-self: flex-start;
+      }
+      /* .father div:last-child {
+        order: -1;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">1</div>
+      <div class="son">2</div>
+      <div class="son">3</div>
+      <div class="son">4</div>
+      <div class="son">5</div>
+      <!-- <div class="son">6</div>
+      <div class="son">7</div>
+      <div class="son">8</div>
+      <div class="son">9</div> -->
+    </div>
+  </body>
+</html>
