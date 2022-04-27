@@ -122,6 +122,7 @@ body {
 }
 
 .items-box li strong {
+  margin-right: 5px;
   color: red;
   display: block;
   font-size: 14px;
@@ -159,7 +160,6 @@ body {
   height: 35px;
   border: none;
   border-radius: 8px;
-  margin-top: 10px;
   background-color: #d8dadc;
 }
 
@@ -168,18 +168,17 @@ body {
 }
 
 .video-list-header h1 {
-  margin-top: 10px;
   font-size: 28px;
   font-weight: 500;
 }
 
 .header button {
   width: 58px;
-  height: 35px;
+  height: 33px;
   border: none;
   border-radius: 8px;
   margin-top: 10px;
-  background-color: #d8dadc;
+  border: 1px solid #d8dadc;
 }
 .header #btn::after {
   content: '>';
