@@ -58,7 +58,9 @@ body {
 }
 
 .homeWorkLink {
-
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
   margin: 50px 0 0 200px;
 }
 
@@ -67,8 +69,8 @@ body {
   line-height: 30px;
   display: inline-block;
   height: 30px;
-  width: 50px;
-  margin: 0 20px;
+  /* width: 50px; */
+  margin:20px;
   border-radius: 10px;
   transition: all 0.8s ease;
   background-color: rgba(17, 101, 154, .1);
