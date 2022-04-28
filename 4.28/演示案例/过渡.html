@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <style>
+
+
+      /* .box {
+        cursor: pointer;
+        width: 300px;
+        height: 300px;
+        background-color: skyblue; */
+        /* transition-duration: 3s;
+        transition-delay: 2s;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.17, 1.64, 0.79, -0.68); */
+        /* transition: all 3s cubic-bezier(0.17, 1.64, 0.79, -0.68) 2s; */
+        /* transition: all 2s ease;
+      } */
+
+      /* .box:hover { */
+        /* 设置元素的可见性 */
+        /* hidden 代表不可见 */
+        /* visibility: hidden; */
+        /* 设置元素透明度  0 是完全透明  1是完全不透明*/
+        /* opacity: 0; */
+        /* width: 600px;
+        height: 500px;
+        background-color: pink;
+      } */
+    </style> -->
+    <style>
+      body {
+        overflow: hidden;
+        height: 100vh;
+        background-color: #ccc;
+      }
+      /* 第一步 定义关键帧动画 */
+      @keyframes ana {
+        25% {
+          margin-left: 100%;
+          margin-top: 0;
+          transform: translate(-100%, 0);
+        }
+        50% {
+          margin-left: 100%;
+          /* margin-top: 100%; */
+          transform: translate(-100%, 500px);
+        }
+        75% {
+          margin-left: 0;
+          /* margin-top: 100%; */
+          transform: translate(0, 500px);
+        }
+        100% {
+          margin-left: 0;
+          margin-top: 0;
+          transform: translate(0, 0);
+        }
+      }
+      @keyframes rocket {
+        100% {
+          background-position: -1600px 0;
+        }
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+
+        background-color: pink;
+        animation: ana 3s linear infinite;
+        /* animation-play-state: running; */
+      }
+
+      .big {
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .box3 {
+        width: 200px;
+        height: 100px;
+        border: 1px solid #ccc;
+        background-image: url('/images/xiong.png');
+        animation: rocket 0.8s steps(8) infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="big">
+      <div class="box"></div>
+    </div> -->
+
+    <div class="box3"></div>
+  </body>
+</html>

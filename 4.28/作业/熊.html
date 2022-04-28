@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #ccc;
+      }
+      @keyframes beer {
+        100% {
+          background-position: -1600px 0;
+        }
+      }
+
+      @keyframes beermove {
+        100% {
+          left: 600px;
+        }
+      }
+      .box {
+        position: absolute;
+        left: 300px;
+        width: 200px;
+        height: 100px;
+        margin: 400px auto;
+        background-image: url('/images/xiong.png');
+        animation: beer 0.3s steps(8) infinite, beermove 3s linear forwards infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
