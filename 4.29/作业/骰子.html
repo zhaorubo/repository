@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>骰子</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      @keyframes oneToSixGo {
+        100% {
+          transform: rotateY(720deg);
+        }
+      }
+
+      .trfromBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        perspective: 500px;
+      }
+
+      .diceBox {
+        transform-style: preserve-3d;
+        position: absolute;
+
+        transform: rotateY(360deg);
+        /* transform-origin: 50% 50%; */
+        animation: oneToSixGo 4s linear infinite;
+      }
+
+      .diceBox > div:nth-child(1) {
+        transform: rotateY(90deg) translateZ(40px);
+      }
+      .diceBox > div:nth-child(2) {
+        transform: rotateY(90deg) translateZ(-40px);
+      }
+      .diceBox > div:nth-child(3) {
+        transform: rotateX(90deg) translateZ(40px);
+      }
+      .diceBox > div:nth-child(4) {
+        transform: rotateX(90deg) translateZ(-40px);
+      }
+      .diceBox > div:nth-child(5) {
+        transform: translateZ(-40px);
+      }
+      .diceBox > div:nth-child(6) {
+        transform: translateZ(40px);
+      }
+      .diceBox > div {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+      }
+
+      .diceBox > div {
+        /* border-radius: 10px; */
+        border: 1px solid #000;
+      }
+
+      .D1::after {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: red;
+      }
+
+      .D1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .D2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .D2::after {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .D2::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .D3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .D3 > div:first-child {
+        align-self: start;
+      }
+      .D3 > div:last-child {
+        align-self: end;
+      }
+
+      .D3 > div {
+        width: 12px;
+        height: 12px;
+        margin: 5px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .D4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .D4 .d4-top > div,
+      .D4 .d4-bottom > div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: red;
+      }
+
+      .d4-top,
+      .d4-bottom {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .D5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .d5-top div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .D5 .d5-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .D5 .d5-center {
+        width: 12px;
+        height: 12px;
+        margin: 10px 0;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .d5-bottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .d5-bottom div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .D6 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .D6 div > div {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+
+      .d6-top,
+      .d6-bottom {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trfromBox">
+      <div class="diceBox">
+        <div class="D1"></div>
+        <div class="D2"></div>
+        <div class="D3">
+          <div class="d3-one"></div>
+          <div class="d3-two"></div>
+          <div class="d3-three"></div>
+        </div>
+        <div class="D4">
+          <div class="d4-top">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="d4-bottom">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="D5">
+          <div class="d5-top">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="d5-center"></div>
+          <div class="d5-bottom">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="D6">
+          <div class="d6-top">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="d6-bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
