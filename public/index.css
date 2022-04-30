@@ -170,7 +170,7 @@ body {
 
 .HomeWorkList,
 .HomeWorkBox {
-  width: 600px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
