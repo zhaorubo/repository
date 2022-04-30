@@ -45,7 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
+  height: 100%;
   overflow: scroll;
 }
 
@@ -60,8 +60,8 @@ body {
 .PictureList li{
   overflow: hidden;
   margin: 0 10px;
-  width: 200px;
-  height: 250px;
+  width: 150px;
+  height: 200px;
 }
 .PictureList li img{
   width: 100%;
