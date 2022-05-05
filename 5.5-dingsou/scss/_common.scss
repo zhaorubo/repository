@@ -1,0 +1,89 @@
+// 这是公共样式部分
+@charset "UTF-8";
+
+$colorA : skyblue;
+body {
+  // 给页面设置最小宽度
+  min-width: 1200px;
+  overflow-x: hidden;
+}
+// 头部蓝色条
+header {
+  width: 100%;
+  .header-top {
+    width: 100%;
+    height: 16px;
+    background-color: $colorA;
+  }
+}
+// 导航栏部分
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 112px;
+  padding-bottom: 20px;
+  .logo {
+    height: 64px;
+    width: 121px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+  }
+  .nav-list {
+    ul {
+      display: flex;
+      height: 64px;
+      justify-content:center;
+      align-items: flex-end;
+      li {
+        margin: 0 16px;
+        font-size: 14px;
+        padding-bottom: 10px;
+      }
+      li:first-child {
+        margin-left: 60px;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+
+  .search {
+    display: flex;
+    input {
+      width: 167px;
+      height: 30px;
+      border: 1px solid #000;
+      border-right: 0;
+    }
+    i {
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 30px;
+      width: 50px;
+      height: 30px;
+      border: 1px solid #000;
+      border-left: 0;
+    }
+
+  }
+  
+}
+
+.big-img-box {
+  width: 100%;
+  min-height: 400px;
+  background-color: pink;
+  img {
+    width: 100%;
+  }
+}
+
+// 页脚区域
+footer {
+  width: 100%;
+  border: 1px solid #ccc;
+}
