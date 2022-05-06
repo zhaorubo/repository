@@ -73,6 +73,7 @@ header .header-top {
 }
 
 .big-img-box {
+  position: relative;
   width: 100%;
   min-height: 400px;
 }
@@ -81,12 +82,33 @@ header .header-top {
   width: 100%;
 }
 
+.big-img-box ul {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  display: flex;
+  transform: translate(-50%);
+}
+
+.big-img-box ul li {
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #615e5e;
+}
+
+.big-img-box ul li :nth-child(n+2) {
+  background-color: #395674;
+}
+
 main {
   width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 main .mian-each-header fieldset {
@@ -363,6 +385,7 @@ main .box-login from .input-box > label {
 }
 
 main .box-login from .input-box > input {
+  border: 1px solid #9ac1c0;
   float: right;
   width: 210px;
   height: 18px;
@@ -388,14 +411,57 @@ main .box-login .input-box-sex .sex {
   margin-left: 40px;
 }
 
+main .security-problem select {
+  border: 1px solid #9ac1c0;
+  width: 167px;
+  height: 26px;
+  margin-right: 50px;
+}
+
+main .problem-ok {
+  width: 674px;
+  margin-bottom: 20px;
+}
+
+main .problem-ok label {
+  float: left;
+}
+
+main .problem-ok input {
+  float: left;
+  width: 210px;
+  height: 18px;
+  margin-left: 15px;
+  border: 1px solid #9ac1c0;
+}
+
 main .validation {
   float: left;
   width: 674px;
   margin: 20px 0;
+  display: flex;
+  align-items: center;
 }
 
 main .validation input {
+  width: 63px;
+  height: 18px;
   margin-left: 30px;
+  border: 1px solid #9ac1c0;
+}
+
+main .validation img {
+  width: 72px;
+  height: 23px;
+  margin: 0 7px;
+}
+
+main .validation p {
+  font-size: 12px;
+}
+
+main .validation p span {
+  color: red;
 }
 
 main .vip-text-btn .vip-text {
@@ -403,12 +469,12 @@ main .vip-text-btn .vip-text {
 }
 
 main .vip-text-btn .vip-text p {
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
   vertical-align: top;
   width: 550px;
   height: 116px;
-  font-size: 14px;
+  font-size: 13px;
   word-break: break-all;
   display: inline-block;
   border: 1px solid #000;

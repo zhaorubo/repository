@@ -86,12 +86,23 @@ main {
           }
         
         }
+        .verification {
+          display: flex;
+          align-items: center;
+          img {
+            width: 72px;
+            height: 23px;
+          }
+          p {
+            font-size: 12px;
+            span {
+              color: red;
+            }
+          }
+        }
         
       }
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
+
       .login-registered-page {
         display: flex;
         justify-content: center;
@@ -103,9 +114,11 @@ main {
           text-align: center;
           line-height: 25px;
           border: 0;
-          // font-weight:500;
           border-radius: 5px;
           margin: 0 5px;
+        }
+         button:nth-child(1) {
+          background-color: #b3d9ff;
         }
         
       }

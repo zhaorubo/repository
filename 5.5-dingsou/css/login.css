@@ -73,6 +73,7 @@ header .header-top {
 }
 
 .big-img-box {
+  position: relative;
   width: 100%;
   min-height: 400px;
 }
@@ -81,12 +82,33 @@ header .header-top {
   width: 100%;
 }
 
+.big-img-box ul {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  display: flex;
+  transform: translate(-50%);
+}
+
+.big-img-box ul li {
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #615e5e;
+}
+
+.big-img-box ul li :nth-child(n+2) {
+  background-color: #395674;
+}
+
 main {
   width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 main .mian-each-header fieldset {
@@ -378,6 +400,24 @@ main .box-login .login .user-messages .checkbox-time span {
   margin-left: 5px;
 }
 
+main .box-login .login .user-messages .verification {
+  display: flex;
+  align-items: center;
+}
+
+main .box-login .login .user-messages .verification img {
+  width: 72px;
+  height: 23px;
+}
+
+main .box-login .login .user-messages .verification p {
+  font-size: 12px;
+}
+
+main .box-login .login .user-messages .verification p span {
+  color: red;
+}
+
 main .box-login .login .login-registered-page {
   display: flex;
   justify-content: center;
@@ -393,6 +433,10 @@ main .box-login .login .login-registered-page button {
   border: 0;
   border-radius: 5px;
   margin: 0 5px;
+}
+
+main .box-login .login .login-registered-page button:nth-child(1) {
+  background-color: #b3d9ff;
 }
 
 main .box-login .login .login-btn button {
