@@ -12,7 +12,7 @@ header {
   width: 100%;
   .header-top {
     width: 100%;
-    height: 16px;
+    height: 25px;
     background-color: $colorA;
   }
 }
@@ -73,17 +73,192 @@ header {
   
 }
 
+// 大图片
 .big-img-box {
   width: 100%;
   min-height: 400px;
-  background-color: pink;
   img {
     width: 100%;
   }
 }
 
+// 主体部分
+main {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .mian-each-header {
+
+    fieldset {
+      box-sizing: border-box;
+      text-align: center;
+      border-top: 1px solid #6db6ff;
+      padding:  5px 20px;
+      width: 335px;
+      height: 48px;
+      legend {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 12px;
+        font-weight: 600;
+
+      }
+    }
+  }
+  // 关于我们
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .about-message-list {
+      box-sizing: border-box;
+      display: flex;
+    }
+    .messages-mission {
+      font-size: 14px;
+      line-height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      h3 {
+        font-size: 16px;
+      font-weight: 600;
+      }
+      p {
+        color: #828282;
+      }
+    }
+
+    .message {
+      display: flex;
+      width: 320px;
+      height: 320px;
+      align-items: center;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding:0 30px;
+      .mission .mission-img {
+        width: 130px;
+        height: 130px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  // 投资案例
+  .our-portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  // 友情链接
+  .friend-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 // 页脚区域
 footer {
+  margin-top: 28px;
   width: 100%;
   border: 1px solid #ccc;
+  .list {
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: center;
+    height: 170px;
+    width: 100%;
+    display: flex;
+    .messages-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      ul {
+        box-sizing: border-box;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 35px ;
+        li:first-child {
+          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        li {
+          margin:8px 0;
+          font-size: 12px;
+        }
+      }
+   }
+   .more-messages {
+     display: flex;
+     width: 350px;
+     flex-wrap: wrap;
+    .picture-messages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 10px;
+      }
+      .messages h3 {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .messages p {
+        font-size: 10px;
+      }
+    }
+    .iphone-time-messages {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+
+      p {
+        font-size: 10px;
+      }
+      img {
+        width: 72px;
+        height: 16px;
+        }
+      }
+      .erweima-message {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 155px;
+      }
+      h3 {
+        margin: 0 0 10px 10px;
+      }
+    }
+  }
+  .trademark-message {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    font-size: 14px;
+    width: 100%;
+    height: 70px;
+    background-color: #6db6ff;
+  }
 }
+

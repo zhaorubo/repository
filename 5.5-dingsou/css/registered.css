@@ -278,199 +278,154 @@ footer .trademark-message {
   background-color: #6db6ff;
 }
 
-main .mian-each-header {
-  width: 900px;
+main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: #fafafa;
+  width: 900px;
 }
 
-main .mian-each-header fieldset {
-  box-sizing: border-box;
+main .header-title {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+}
+
+main .header-title .title {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  border: 1px solid #6db6ff;
-  padding: 5px 20px;
-  width: 145px;
-  height: 48px;
-}
-
-main .mian-each-header fieldset legend {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-main .mian-each-header fieldset p {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-main .about-us {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  font-weight: 600;
 }
 
-main .about-us .about-message-list {
-  box-sizing: border-box;
-  width: 900px;
-  justify-content: space-between;
-  display: flex;
-  background-color: #fafafa;
+main .header-title .title h1 {
+  letter-spacing: 13px;
+  text-align: center;
+  width: 150px;
+  font-size: 18px;
 }
 
-main .about-us .about-message-list .messages-mission {
-  margin-top: 15px;
-  font-size: 14px;
+main .header-title .title p {
+  font-size: 12px;
   line-height: 25px;
+  font-weight: 400;
+}
+
+main .header-title::before {
+  content: "";
+  width: 150px;
+  height: 0;
+  border-top: 1px solid #9ac1c0;
+}
+
+main .header-title::after {
+  content: "";
+  width: 150px;
+  height: 0;
+  border-top: 1px solid #9ac1c0;
+}
+
+main .box-login {
+  width: 752px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-main .about-us .about-message-list .messages-mission h3 {
-  font-size: 16px;
-  font-weight: 600;
+main .box-login h1 {
+  margin-bottom: 40px;
 }
 
-main .about-us .about-message-list .messages-mission p {
-  color: #828282;
-}
-
-main .about-us .about-message-list .message {
+main .box-login from {
   display: flex;
-  width: 270px;
-  height: 320px;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: 752px;
+}
+
+main .box-login from .input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  height: 18px;
+  width: 674px;
+}
+
+main .box-login from .input-box > label {
+  width: 80px;
+  text-align: left;
+  float: left;
+}
+
+main .box-login from .input-box > input {
+  float: right;
+  width: 210px;
+  height: 18px;
+}
+
+main .box-login from .input-box > p {
+  margin-left: 15px;
+  height: 18px;
+  line-height: 18px;
+  width: 348px;
+}
+
+main .box-login from .input-box > p > span {
+  color: red;
+}
+
+main .box-login .input-box-sex {
+  display: flex;
+  width: 674px;
+}
+
+main .box-login .input-box-sex .sex {
+  margin-left: 40px;
+}
+
+main .validation {
+  float: left;
+  width: 674px;
+  margin: 20px 0;
+}
+
+main .validation input {
+  margin-left: 30px;
+}
+
+main .vip-text-btn .vip-text {
+  width: 674px;
+}
+
+main .vip-text-btn .vip-text p {
+  padding: 10px;
   box-sizing: border-box;
-  padding: 0 30px;
-  margin-top: 20px;
-  background-color: #f2f2f2;
-}
-
-main .about-us .about-message-list .message:nth-child(2) {
-  width: 320px;
-}
-
-main .about-us .about-message-list .message .mission .mission-img {
-  width: 130px;
-  height: 130px;
-}
-
-main .about-us .about-message-list .message .mission .mission-img img {
-  width: 100%;
-  height: 100%;
-}
-
-main .our-portfolio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-}
-
-main .our-portfolio .our-portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 900px;
-  margin-top: 10px;
-}
-
-main .our-portfolio .our-portfolio-list .list-child {
-  margin-bottom: 20px;
-}
-
-main .our-portfolio .img-box {
+  vertical-align: top;
+  width: 550px;
+  height: 116px;
+  font-size: 14px;
+  word-break: break-all;
+  display: inline-block;
   border: 1px solid #000;
-  height: 210px;
-  width: 295px;
 }
 
-main .our-portfolio .img-box img {
-  width: 100%;
-  height: 100%;
+main .vip-text-btn .checkbox-box {
+  margin-left: 100px;
+  margin-top: 5px;
 }
 
-main .our-portfolio .portfolio-messages-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-main .our-portfolio .portfolio-messages-btn h1 {
-  letter-spacing: 3px;
-  margin-top: 16px;
-}
-
-main .our-portfolio .portfolio-messages-btn button {
+main .btn-login button {
   border: 0;
-  width: 135px;
-  height: 27px;
-  font-weight: 600;
-  font-size: 16px;
+  width: 120px;
+  height: 32px;
+  border-radius: 5px;
+  font-size: 14px;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 33px;
   background-color: #6db6ff;
-}
-
-main .friend-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main .friend-link .bgc-big-img {
-  position: relative;
-  background: url("../assets/images/index-img.png") no-repeat #3c3f41;
-  height: 305px;
-  width: 900px;
-}
-
-main .friend-link .bgc-big-img fieldset {
-  position: absolute;
-  top: 22px;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-main .friend-link .bgc-big-img fieldset legend, main .friend-link .bgc-big-img fieldset p {
-  color: #fff;
-}
-
-main .friend-link .bgc-big-img .trademark-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-main .friend-link .bgc-big-img .trademark-img .arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 37px;
-  height: 68px;
-  background-color: rgba(60, 63, 65, 0.8);
-  margin: 0 8px;
-}
-
-main .friend-link .bgc-big-img .trademark-img .arrow i {
-  color: #fff;
-  font-size: 30px;
-}
-
-main .friend-link .bgc-big-img .trademark-img img {
-  width: 222px;
-  height: 100%;
 }

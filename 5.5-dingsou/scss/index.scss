@@ -1,2 +1,181 @@
 @charset "UTF-8";
 @import './common';
+// 主体部分
+
+main {
+  .mian-each-header {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    fieldset {
+      box-sizing: border-box;
+      text-align: center;
+      border: 1px solid #6db6ff;
+      padding:  5px 20px;
+      width: 145px;
+      height: 48px;
+      legend {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 12px;
+        font-weight: 600;
+
+      }
+    }
+  }
+  // 关于我们
+  .about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .about-message-list {
+      box-sizing: border-box;
+      width: 900px;
+      justify-content: space-between;
+      display: flex;
+      background-color: #fafafa;
+      .messages-mission {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        p {
+          color: #828282;
+        }
+      }
+  
+      .message {
+        display: flex;
+        width: 270px;
+        height: 320px;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding:0 30px;
+        margin-top: 20px;
+        background-color: #f2f2f2;
+        &:nth-child(2) {
+          width: 320px;
+        }
+        .mission .mission-img {
+          width: 130px;
+          height: 130px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    }
+    
+
+  // 投资案例
+  .our-portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    .our-portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 900px;
+      margin-top: 10px;
+      .list-child {
+        margin-bottom: 20px;
+      }
+    }
+    .img-box {
+      border: 1px solid #000;
+      height: 210px;
+      width: 295px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .portfolio-messages-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        letter-spacing: 3px;
+        margin-top: 16px;
+      }
+      button {
+        border: 0;
+        width: 135px;
+        height: 27px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #fff;
+        margin-top: 20px;
+        background-color: #6db6ff;
+      }
+    }
+  }
+  // 友情链接
+  .friend-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bgc-big-img {
+      position: relative;
+      background: url("../assets/images/index-img.png") no-repeat rgba(60,63,65,1);
+      height: 305px;
+      width: 900px;
+      fieldset {
+        position: absolute;
+        top: 22px;
+        left: 50%;
+        transform: translate(-50%);
+        legend, p {
+          color: #fff;
+        }
+      }
+      .trademark-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 900px;
+        height: 82px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .arrow {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 37px;
+          height: 68px;
+          background-color: rgba(60,63,65,.8);
+          margin: 0 8px;
+          i {
+            color: #fff;
+            font-size: 30px;
+          }
+        }
+          img {
+            width: 222px;
+            height: 100%;
+          }
+      }
+    }
+  }
+}

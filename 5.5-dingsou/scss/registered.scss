@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import './common';
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 900px;
+  .header-title {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    margin: 50px 0;
+    .title {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      font-weight: 600;
+      h1 {
+        letter-spacing:13px;
+        text-align: center;
+        width: 150px;
+        font-size: 18px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 25px;
+        font-weight: 400;
+      }
+      
+    }
+    &::before{
+      content: "";
+      width: 150px;
+      height: 0;
+      border-top: 1px solid #9ac1c0;
+    }
+    &::after{
+      content: "";
+      width: 150px;
+      height: 0;
+      border-top: 1px solid #9ac1c0;
+    }
+  }
+  .box-login {
+    width: 752px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      margin-bottom: 40px;
+    }
+    from {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 752px;
+      .input-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        height: 18px;
+        width: 674px;
+        > label {
+          width: 80px;
+          text-align: left;
+          float: left;
+        }
+        > input {
+          float: right;
+          width: 210px;
+          height: 18px;
+        }
+        > p {
+          margin-left: 15px;
+          height: 18px;
+          line-height: 18px;
+          width: 348px;
+        > span {
+            // margin-right: 1px;
+            color: red;
+          }
+        }
+      }
+
+    }
+    
+  }
+  .box-login .input-box-sex {
+    display: flex;
+    width: 674px;
+    .sex {
+      margin-left: 40px;
+    }
+  }
+  .validation {
+        float: left;
+        width: 674px;
+        margin: 20px 0;
+        input {
+          margin-left: 30px;
+        }
+    }
+    .vip-text-btn {
+      .vip-text {
+        width: 674px;
+        p {
+          padding: 10px;
+          box-sizing: border-box;
+          vertical-align: top;
+          width: 550px;
+          height: 116px;
+          font-size: 14px;
+          word-break: break-all;
+          display: inline-block;
+          border: 1px solid #000;
+        }
+      }
+      .checkbox-box {
+       margin-left: 100px;
+       margin-top: 5px;
+        
+      }
+    }
+    .btn-login {
+ 
+      button {
+        border: 0;
+        width: 120px;
+        height: 32px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 33px;
+        background-color: #6db6ff;
+      }
+    }
+  }
+
+
+

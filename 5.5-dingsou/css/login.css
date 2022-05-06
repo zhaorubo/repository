@@ -278,199 +278,142 @@ footer .trademark-message {
   background-color: #6db6ff;
 }
 
-main .mian-each-header {
-  width: 900px;
+main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fafafa;
+  flex-direction: column;
 }
 
-main .mian-each-header fieldset {
-  box-sizing: border-box;
+main .header-title {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+}
+
+main .header-title .title {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  border: 1px solid #6db6ff;
-  padding: 5px 20px;
-  width: 145px;
-  height: 48px;
-}
-
-main .mian-each-header fieldset legend {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-main .mian-each-header fieldset p {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-main .about-us {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  font-weight: 600;
 }
 
-main .about-us .about-message-list {
-  box-sizing: border-box;
-  width: 900px;
-  justify-content: space-between;
-  display: flex;
-  background-color: #fafafa;
+main .header-title .title h1 {
+  letter-spacing: 13px;
+  text-align: center;
+  width: 150px;
+  font-size: 18px;
 }
 
-main .about-us .about-message-list .messages-mission {
-  margin-top: 15px;
-  font-size: 14px;
+main .header-title .title p {
+  font-size: 12px;
   line-height: 25px;
+  font-weight: 400;
+}
+
+main .header-title::before {
+  content: "";
+  width: 150px;
+  height: 0;
+  border-top: 1px solid #9ac1c0;
+}
+
+main .header-title::after {
+  content: "";
+  width: 150px;
+  height: 0;
+  border-top: 1px solid #9ac1c0;
+}
+
+main .box-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 750px;
 }
 
-main .about-us .about-message-list .messages-mission h3 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-main .about-us .about-message-list .messages-mission p {
-  color: #828282;
-}
-
-main .about-us .about-message-list .message {
+main .box-login .login {
+  width: 381px;
+  height: 258px;
   display: flex;
-  width: 270px;
-  height: 320px;
-  align-items: center;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 0 30px;
-  margin-top: 20px;
-  background-color: #f2f2f2;
+  justify-content: space-between;
+  align-items: center;
 }
 
-main .about-us .about-message-list .message:nth-child(2) {
-  width: 320px;
+main .box-login .login .user-messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-main .about-us .about-message-list .message .mission .mission-img {
-  width: 130px;
-  height: 130px;
+main .box-login .login .user-messages .input-text input {
+  margin: 12px 0;
+  border-radius: 5px;
+  background-color: #ecf5ff;
+  border: 1px solid #ccc;
+  width: 266px;
+  height: 20px;
 }
 
-main .about-us .about-message-list .message .mission .mission-img img {
+main .box-login .login .user-messages .input-text:nth-child(3) input {
+  width: 100px !important;
+}
+
+main .box-login .login .user-messages .input-text label {
+  display: inline-block;
+  width: 60px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+main .box-login .login .user-messages .checkbox-time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main .box-login .login .user-messages .checkbox-time span {
+  margin-left: 5px;
+}
+
+main .box-login .login .login-registered-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
 }
 
-main .our-portfolio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+main .box-login .login .login-registered-page button {
+  width: 92px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+main .box-login .login .login-btn button {
+  width: 95px;
+  height: 24px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 24px;
+  border: 0;
+  background-color: #b3d9ff;
+}
+
+main .box-login .login .login-btn a {
+  color: #b30000;
   font-size: 12px;
 }
 
-main .our-portfolio .our-portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 900px;
-  margin-top: 10px;
-}
-
-main .our-portfolio .our-portfolio-list .list-child {
-  margin-bottom: 20px;
-}
-
-main .our-portfolio .img-box {
-  border: 1px solid #000;
-  height: 210px;
-  width: 295px;
-}
-
-main .our-portfolio .img-box img {
-  width: 100%;
-  height: 100%;
-}
-
-main .our-portfolio .portfolio-messages-btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-main .our-portfolio .portfolio-messages-btn h1 {
-  letter-spacing: 3px;
-  margin-top: 16px;
-}
-
-main .our-portfolio .portfolio-messages-btn button {
-  border: 0;
-  width: 135px;
-  height: 27px;
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff;
-  margin-top: 20px;
-  background-color: #6db6ff;
-}
-
-main .friend-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main .friend-link .bgc-big-img {
-  position: relative;
-  background: url("../assets/images/index-img.png") no-repeat #3c3f41;
-  height: 305px;
-  width: 900px;
-}
-
-main .friend-link .bgc-big-img fieldset {
-  position: absolute;
-  top: 22px;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-main .friend-link .bgc-big-img fieldset legend, main .friend-link .bgc-big-img fieldset p {
-  color: #fff;
-}
-
-main .friend-link .bgc-big-img .trademark-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 82px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-main .friend-link .bgc-big-img .trademark-img .arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 37px;
-  height: 68px;
-  background-color: rgba(60, 63, 65, 0.8);
-  margin: 0 8px;
-}
-
-main .friend-link .bgc-big-img .trademark-img .arrow i {
-  color: #fff;
-  font-size: 30px;
-}
-
-main .friend-link .bgc-big-img .trademark-img img {
-  width: 222px;
-  height: 100%;
+main .box-login .login-img {
+  width: 381px;
+  height: 258px;
+  background-color: skyblue;
 }
