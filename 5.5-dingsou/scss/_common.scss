@@ -43,6 +43,9 @@ header {
         margin: 0 16px;
         font-size: 14px;
         padding-bottom: 10px;
+        :hover {
+          color: #6db6ff;
+        }
       }
       li:first-child {
         margin-left: 60px;

@@ -46,6 +46,10 @@ header .header-top {
   padding-bottom: 10px;
 }
 
+.container .nav-list ul li :hover {
+  color: #6db6ff;
+}
+
 .container .nav-list ul li:first-child {
   margin-left: 60px;
   border-bottom: 1px solid #ccc;
