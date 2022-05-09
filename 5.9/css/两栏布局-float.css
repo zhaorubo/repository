@@ -1,0 +1,16 @@
+.box {
+  background-color: blue;
+}
+
+.left {
+  width: 200px;
+  float: left;
+  height: 500px;
+  background-color: black;
+}
+
+.right {
+  overflow: hidden;
+  height: 800px;
+  background-color: red;
+}

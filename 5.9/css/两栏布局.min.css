@@ -1,0 +1,1 @@
+.box{display:flex}.left{width:200px;flex-shrink:0;height:500px;background-color:black}.right{height:800px;flex-grow:1;background-color:red}

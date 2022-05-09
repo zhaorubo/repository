@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.box {
+  background-color: blue;
+}
+
+.left {
+  width: 200px;
+  // 先让左边盒子浮动起来，不占位
+  float: left;
+  height: 500px;
+  background-color: black;
+}
+
+.right {
+  // 右边盒子创建成BFC 这里使用overflow: hidden 就可以
+  overflow: hidden;
+  height: 800px;
+  background-color: red;
+}
