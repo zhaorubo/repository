@@ -1,84 +1,339 @@
-footer .nav-list {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 75px;
+}
+
+body {
+  margin-bottom: 1.8rem;
+}
+
+footer {
+  box-sizing: border-box;
+  padding: 0.147rem 0.693rem 0.187rem 0.613rem;
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 135px;
-  width: 100vw;
-  background-color: pink;
+  height: 1.8rem;
+  width: 100%;
+  background-color: #fff;
 }
 
-footer .nav-list ul {
+footer .bottom-nav-list {
+  height: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+footer .bottom-nav-list :nth-child(2) .nav-logo {
+  background: url("../assets/images/jinglingtu.png") no-repeat -1.15rem 0/6.2rem 5.64rem !important;
+}
+
+footer .bottom-nav-list :nth-child(3) .nav-logo {
+  background: url("../assets/images/jinglingtu.png") no-repeat -2.24rem 0/6.2rem 5.64rem !important;
+}
+
+footer .bottom-nav-list :nth-child(4) .nav-logo {
+  background: url("../assets/images/jinglingtu.png") no-repeat -3.4rem 0/6.2rem 5.64rem !important;
+}
+
+footer .bottom-nav-list li {
+  list-style: none;
+  width: 1.0133rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .bottom-nav-list li .nav-logo {
+  display: inline-block;
+  width: 0.973rem;
+  height: 0.973rem;
+  margin-bottom: .1333rem;
+  background: url("../assets/images/jinglingtu.png") no-repeat 0 -1.1333rem/6.2rem 5.64rem;
+}
+
+footer .bottom-nav-list li .nav-title {
+  display: block;
+  text-align: center;
+  font-size: 0.347rem;
+}
+
+header {
+  display: flex;
+  z-index: 99;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.227rem 0.307rem 0.133rem 0.28rem;
+  background-color: #fff;
+}
+
+header .logo {
+  width: 1.64rem;
+  height: 1.64rem;
+}
+
+header .search {
+  position: relative;
+  font-size: 0.32rem;
+  width: 3.547rem;
+  height: 0.68rem;
+  overflow: hidden;
+  border: 0.027rem solid #ff9344;
+  border-radius: 0.34rem;
+}
+
+header .search input {
+  padding-left: 0.387rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 0.68rem;
+}
+
+header .search span {
+  position: absolute;
+  top: 0.107rem;
+  right: 0.213rem;
+  width: 0.4667rem;
+  height: 0.4667rem;
+  background-color: #000;
+  background: url("../assets/images/jinglingtu.png") no-repeat -3.9867rem -4.9333rem/6.2rem 5.64rem;
+}
+
+header .select {
+  position: relative;
+  width: 2.12rem;
+  height: 0.747rem;
+  border: 0.027rem solid #ff9344;
+}
+
+header .select :first-child {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-right: .2667rem;
+  font-size: 0.347rem;
+}
+
+header .select :nth-child(2) {
+  position: absolute;
+  right: 0.147rem;
+  top: 0.280rem;
+  width: 0;
+  height: 0;
+  border-color: #ff9344 transparent transparent transparent;
+  border-style: solid;
+  border-top-width: .1333rem;
+  border-bottom-width: .1333rem;
+  border-left-width: .1333rem;
+  border-right-width: .1333rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 0.28rem;
+}
+
+main .big-image {
+  position: relative;
+  width: 10rem;
+  height: 3.827rem;
+}
+
+main .big-image img {
   width: 100%;
   height: 100%;
+}
+
+main .big-image ul {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
   align-items: center;
+}
+
+main .big-image ul :nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+main .big-image ul li {
+  width: 1.733rem;
+  height: 0.16rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+main .a-bulk {
+  margin: 0.44rem 0;
+  width: 9.44rem;
+  height: 3.88rem;
+}
+
+main .a-bulk .a-bulk-header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .a-bulk .a-bulk-header .left {
+  font-size: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+main .a-bulk .a-bulk-header .left .left-img {
+  display: block;
+  width: 0.747rem;
+  height: 0.72rem;
+  background: url("../assets/images/jinglingtu.png") no-repeat 0 -2.2533rem/6.2rem 5.64rem;
+}
+
+main .a-bulk .a-bulk-header .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .a-bulk .a-bulk-header .right .right-text {
+  font-size: 0.32rem;
+}
+
+main .a-bulk .a-bulk-header .right .right-img {
+  margin-left: 0.107rem;
+  display: block;
+  width: 0.333rem;
+  height: 0.347rem;
+  background: url("../assets/images/jinglingtu.png") no-repeat -3.96rem -4.5333rem/6.2rem 5.64rem;
+}
+
+main .a-bulk .a-bulk-content {
+  box-sizing: border-box;
+  width: 9.44rem;
+  padding: .2133rem 0.893rem 0.413rem 0.747rem;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-footer .nav-list ul :first-child {
+main .a-bulk .a-bulk-content :nth-child(4), main .a-bulk .a-bulk-content :nth-child(3) {
+  margin-top: 0.387rem;
+}
+
+main .a-bulk .a-bulk-content img {
+  width: 3.213rem;
+  height: 1.253rem;
+}
+
+main .like {
+  margin: 0.44rem 0;
+  width: 9.44rem;
+}
+
+main .like .like-header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .like .like-header .left {
+  font-size: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+main .like .like-header .left .left-img {
+  display: block;
+  width: 0.747rem;
+  height: 0.72rem;
+  background: url("../assets/images/jinglingtu.png") no-repeat -1.099rem -2.1667rem/6.2rem 5.64rem;
+}
+
+main .like .like-header .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .like .like-header .right .right-text {
+  font-size: 0.32rem;
+}
+
+main .like .like-header .right .right-img {
+  margin-left: 0.107rem;
+  display: block;
+  width: 0.333rem;
+  height: 0.347rem;
+  background: url("../assets/images/jinglingtu.png") no-repeat -3.96rem -4.5333rem/6.2rem 5.64rem;
+}
+
+main .like .like-content ul li {
+  position: relative;
+  width: 100%;
+  height: 2.267rem;
+  display: flex;
+}
+
+main .like .like-content ul li .item-img {
+  width: 2.813rem;
+  height: 2.187rem;
+}
+
+main .like .like-content ul li .item-img img {
+  width: 100%;
+  height: 100%;
+}
+
+main .like .like-content ul li .item-messages-box .text {
+  margin-left: 0.187rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-footer .nav-list ul :first-child i {
-  display: block;
-  width: 76px;
-  height: 76px;
-  background: url("../assets/images/jinglingtu.png") no-repeat 0 -85px;
+main .like .like-content ul li .item-messages-box .text h1 {
+  font-size: 0.4rem;
 }
 
-footer .nav-list ul :first-child h1 {
-  text-align: center;
-  font-size: 25px;
+main .like .like-content ul li .item-messages-box .text p {
+  font-size: 0.293rem;
+  color: #494949;
 }
 
-footer .nav-list ul :nth-child(2) {
-  display: flex;
-  flex-direction: column;
+main .like .like-content ul li .item-messages-box .text p span {
+  font-size: 0.293rem;
+  color: #494949;
 }
 
-footer .nav-list ul :nth-child(2) i {
-  display: block;
-  width: 76px;
-  height: 76px;
-  background: url("../assets/images/jinglingtu.png") no-repeat 0 -85px;
+main .like .like-content ul li .item-messages-box .text span {
+  margin-top: 0.293rem;
+  font-size: 0.427rem;
+  color: #ff9344;
 }
 
-footer .nav-list ul :nth-child(2) h1 {
-  text-align: center;
-  font-size: 25px;
+main .like .like-content ul li .item-messages-box .more-messages {
+  text-align: right;
+  font-size: 0.293rem;
 }
 
-footer .nav-list ul :nth-child(3) {
-  display: flex;
-  flex-direction: column;
+main .like .like-content ul li .item-messages-box .more-messages .distance {
+  position: absolute;
+  right: 0.04rem;
+  top: 0.493rem;
 }
 
-footer .nav-list ul :nth-child(3) i {
-  display: block;
-  width: 76px;
-  height: 76px;
-  background: url("../assets/images/jinglingtu.png") no-repeat 0 -85px;
-}
-
-footer .nav-list ul :nth-child(3) h1 {
-  text-align: center;
-  font-size: 25px;
-}
-
-footer .nav-list ul :nth-child(4) {
-  display: flex;
-  flex-direction: column;
-}
-
-footer .nav-list ul :nth-child(4) i {
-  display: block;
-  width: 76px;
-  height: 76px;
-  background: url("../assets/images/jinglingtu.png") no-repeat 0 -85px;
-}
-
-footer .nav-list ul :nth-child(4) h1 {
-  text-align: center;
-  font-size: 25px;
+main .like .like-content ul li .item-messages-box .more-messages .num-shop {
+  position: absolute;
+  bottom: 0.32rem;
+  right: 0;
 }
