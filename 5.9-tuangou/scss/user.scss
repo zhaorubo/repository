@@ -243,8 +243,10 @@ main {
 
 footer {
   .bottom-nav-list {
-    :nth-child(2) .nav-logo {
-      background: url("../assets/images/jinglingtu.png") no-repeat -1.1467rem -1.1333rem / 6.2rem 5.64rem !important;
+    li:nth-child(4)  {
+     .nav-logo {
+      background: url("../assets/images/jinglingtu.png") no-repeat -3.3867rem -1.1467rem / 6.2rem 5.64rem !important;
+     }
     }
     li {
       .nav-logo {
