@@ -354,3 +354,11 @@ main .recom-search .recom-list ul li img {
   width: 100%;
   height: 100%;
 }
+
+footer .bottom-nav-list :nth-child(3) .nav-logo {
+  background: url("../assets/images/jinglingtu.png") no-repeat -2.2667rem -1.1333rem/6.2rem 5.64rem !important;
+}
+
+footer .bottom-nav-list li .nav-logo {
+  background: url("../assets/images/jinglingtu.png") no-repeat 0 0/6.2rem 5.64rem;
+}

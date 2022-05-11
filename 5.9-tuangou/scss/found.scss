@@ -190,7 +190,6 @@ main {
           width: 5.6rem;
 	        height: 1.96rem;
           margin-bottom: 0.107rem;
-
         }
         .item-2 {
           width: 2.6rem;
@@ -261,6 +260,22 @@ main {
           }
         }
       }
+    }
+  }
+}
+
+
+
+footer {
+  .bottom-nav-list {
+    :nth-child(3) .nav-logo {
+      background: url("../assets/images/jinglingtu.png") no-repeat -2.2667rem -1.1333rem / 6.2rem 5.64rem !important;
+    }
+    li {
+      .nav-logo {
+        background: url("../assets/images/jinglingtu.png") no-repeat 0 0 / 6.2rem 5.64rem;
+      }
+
     }
   }
 }
