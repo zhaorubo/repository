@@ -178,9 +178,9 @@ main .good .left {
 
 main .good .left i {
   display: block;
-  width: 0.607rem;
-  height: 0.58rem;
-  background: url("../assets/images/jinglingtu.png") no-repeat -2.28rem -2.2933rem/6.2rem 5.64rem !important;
+  width: 0.747rem;
+  height: 0.72rem;
+  background: url(../assets/images/jinglingtu.png) no-repeat -2.2667rem -2.28rem/6.2rem 5.64rem;
 }
 
 main .good .left p {
