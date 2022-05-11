@@ -14,6 +14,7 @@ html {
 
 body {
   margin-bottom: 1.8rem;
+  overflow-x: hidden;
 }
 
 footer {
@@ -297,6 +298,7 @@ main .like .like-content ul li .item-img {
 main .like .like-content ul li .item-img img {
   width: 100%;
   height: 100%;
+  object-fit: cover !important;
 }
 
 main .like .like-content ul li .item-messages-box .text {

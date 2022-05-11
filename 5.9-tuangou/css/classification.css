@@ -14,6 +14,7 @@ html {
 
 body {
   margin-bottom: 1.8rem;
+  overflow-x: hidden;
 }
 
 footer {
@@ -238,6 +239,7 @@ main .class-item-box .class-item-list ul li {
 main .class-item-box .class-item-list ul li img {
   width: 1.973rem;
   height: 1.987rem;
+  object-fit: cover;
   margin-bottom: 0.12rem;
 }
 
