@@ -1,0 +1,28 @@
+@charset "UTF-8";
+//  @include 调用
+// [Name]($XXX);传参
+
+@mixin TextStyle ($size: 14px, $color: #000, $Text-align: initial, $line-height: initial) {
+  font-size: $size;
+  color: $color;
+  text-align: $Text-align;
+  line-height: $line-height;
+}
+
+
+@mixin Size ($width, $height, $bgc: #fff) {
+  width: $width;
+  height: $height;
+  background-color: $bgc;
+}
+
+@mixin Border ($border: none, $Bor-r: 0px) {
+  border: $border;
+  border-radius: $Bor-r;
+}
+
+@mixin Flex ($jc: center, $ai: center) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
