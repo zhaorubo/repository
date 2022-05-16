@@ -1,1 +1,1 @@
-.box{background-color:blue}.left{width:200px;float:left;height:500px;background-color:black}.right{overflow:hidden;height:800px;background-color:red}
+.box{display:flex}.left,.right{width:200px;flex-shrink:0;height:500px;background-color:black}.center{flex-grow:1;height:800px;background-color:red}

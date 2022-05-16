@@ -74,6 +74,7 @@ body {
         ul {
           display: flex;
           justify-content: space-between;
+
           li {
             width: 221px;
             height: 255px;
@@ -102,13 +103,14 @@ body {
       display: flex;
       justify-content: center;
       margin-top: 117px;
+
       button {
         width: 205px;
         height: 50px;
         font-size: 18px;
         color: #fff;
         border: none;
-        background-image: linear-gradient(to right,#0060ff, #9e00ff);
+        background-image: linear-gradient(to right, #0060ff, #9e00ff);
         border-radius: 25px;
       }
     }

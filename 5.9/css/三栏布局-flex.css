@@ -1,16 +1,17 @@
 .box {
-  background-color: blue;
+  display: flex;
 }
 
-.left {
+.left,
+.right {
   width: 200px;
-  float: left;
+  flex-shrink: 0;
   height: 500px;
   background-color: black;
 }
 
-.right {
-  overflow: hidden;
+.center {
+  flex-grow: 1;
   height: 800px;
   background-color: red;
 }
