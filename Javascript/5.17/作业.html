@@ -108,16 +108,22 @@ A。 +    B. &＆    C。 ==    √D。 *= -->
             //     alert('是奇数')
             // }
             5
-            // var num_one = prompt('请输入第一个数字')
-            // var num_two = prompt('请输入第二个数字')
-            // var num_three = prompt('请输入第三个数字')
-            // if (num_one > num_two) {
-            //     console.log(11)
-            // } else if (num_one > num_three) {
-            //     alert('最大的是' + num_one)
-            // } else {
-            //     alert('最大：' + num_three)
-            // }
+            var num_one = prompt('请输入第一个数字')
+            var num_two = prompt('请输入第二个数字')
+            var num_three = prompt('请输入第三个数字')
+            if (num_one > num_two) {
+                if (num_one > num_three) {
+                    alert(num_one)
+                } else {
+                    alert(num_three)
+                }
+            } else {
+                if (num_two > num_three) {
+                    alert(num_two)
+                } else {
+                    alert(num_three)
+                }
+            }
         </script>
     </body>
 </html>
