@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 一、判断题
+×1.在JavaScript中可以用十六进制形式表示浮点数常量。 
+√2.空字符串(”"）也是字符串常量。 
+×3.使用单引号对（’ ’）表示字符常量，而使用双引号对（" ")表示字符串常量。 
+×4.在定义JavaScript变量时，一定要指出变量名和值.  
+×5.用var定义一个变量后，如果没有赋予任何值，那么它的值是空值,即null.  
+√6.JavaScript规定在使用任何变量之前必须先使用var声明它.  
+×7.在使用var x=1声明变量x之后,赋值语句x="今天天气真好”将出错。 
+×8.表达式的类型只取决于运算符，与操作数无关。 
+×9.两个整数进行除（/）运算,其结果也为整数。 
+√10.如果有定义var a=true，b；那么a ll b的结果为true. -->
+        <!-- 二、填空题：
+1．下面四个变量声明语句中，哪一个变量的命名是正确的？
+A. var default  √B。 var my_bouse　C。 var my dog  D. var 2cats
+
+2．下面哪一个语句定义了一个名为pageNumber的变量并将它的值赋为240?
+A。 var PageNumber=240  √B. pagenumber=240
+C. var pageNumber=240  D. var int named pageNumber=240
+
+3．下面哪一个字符串变量定义语句是不正确的？
+A. var mytext = "Here is some text!”   B. var mytext = 'Here is some text!' 
+√C. var mytext = 'Here is some text！"   D。 var mytext = "Here is\nsome text！"
+
+
+5．下面哪一个不是JavaScript运算符？
+A. =   B. ==    C。 &＆    √D. ＄＃
+
+6．表达式123％7的计算结果是
+A. 2    B. 3     √C. 4     D。 5
+
+7．表达式”123abe"—”123”的计算结果是＿。
+A。 "abc"    B。 0    C。 ”123abc123"    √D. NaN
+
+8．赋值运算符的作用是什么?
+√A. 给一个变量赋新值   B。 给一个变量赋予一个新名
+C. 执行比较运算  D。 没有任何用处
+
+9．比较运算符的作用是什么?
+A．执行数学计算            B。 处理二进制位，目前还不重要
+√C．比较两个值或表达式,返回真或假          D. 只比较数字，不比较字符串
+
+10．下面的哪一个表达式将返回真？
+A. （3===3)&＆(5<l）      B. ！（17<=20)
+C. (3!=3） ｜| (7〈2）      √D. (1===1） |｜ （3〈2）
+
+11．下面的哪一个表达式将返回假？
+A。 !(3〈=l)      B. (4>=4） && （5〈=2）
+√C. (”a”=="a" ） ＆＆ (”c"！="d”)   D。 (2〈3) ｜｜ (3〈2）
+
+12．下列各种运算符中,_____优先级最高。
+A。 +    B. &＆    C。 ==    √D。 *= -->
+        <!-- 三、编程题
+    1.编写程序．通过用户输入的年龄判断是哪个年龄段的人（儿童:年龄＜14；青少年：14<=年龄＜24;青年：24<年龄＜40；
+    中年：40＜=年龄＜60; 老年：年龄〉=60)，并在页面上输出判断结果。
+    2.判断输入的数字是奇偶数
+    3.⽤户购买商品，三个商品中有⼀个超过50元，或者总价超过100元，即可以打⼋五折，否则不打折：
+    4.判断输入的年份是否是闰年 5.输入3个值，并求最大值 -->
+
+        <script>
+            1
+            // var a = Number(prompt('请输入第一个商品价格'))
+            // var b = Number(prompt('请输入第二个商品价格'))
+            // var c = Number(prompt('请输入第三个商品价格'))
+            // var pls = a + b + c
+            // if (a > 50 || b > 50 || c > 50 || pls > 100) {
+            //     pls = pls * 0.85
+            //     alert(`您的价格是${parseFloat(pls, 2)}`)
+            // } else {
+            //     alert(`您的价格是${parseFloat(pls, 2)}`)
+            // }
+            2
+            // var year = prompt('请输入年份')
+            // if (year % 400 == 0 || year % 4 == 0 || year % 100 != 0) {
+            //     alert('你输入的是闰年')
+            // } else {
+            //     alert('你输入的是平年')
+            // }
+            3
+            // var age = prompt('请输入年龄')
+            // if (age < 14) {
+            //     alert('儿童')
+            // } else if ( 14 <= age < 24) {
+            //     alert('青少年')
+            // } else if (24 < age < 40) {
+            //     alert('青年')
+            // } else if ( 40 <= age < 60) {
+            //     alert('中年')
+            // } else if (age >= 60) {
+            //     alert('老年')
+            // } else {
+            //     alert('注销身份证')
+            // }
+            4
+            // var num = prompt('请输入数字')
+            // if (num % 2 == 0) {
+            //     alert('是偶数')
+            // } else {
+            //     alert('是奇数')
+            // }
+        </script>
+    </body>
+</html>
