@@ -82,7 +82,6 @@ header {
 
 
 
-// body
 
 
 main {
@@ -155,6 +154,7 @@ main {
         position: relative;
         width: 100%;
         height: 80%;
+
         &::before {
           position: absolute;
           top: 0;
@@ -162,8 +162,9 @@ main {
           content: "";
           width: 100%;
           height: 100%;
-          background-color: rgba(0,0,0,.4);
+          background-color: rgba(0, 0, 0, .4);
         }
+
         .list-nav-living ul {
           position: absolute;
           left: 50%;
@@ -271,19 +272,21 @@ main {
         $caseColor: #ca8355;
         $appointmentColor: #764b33;
 
-        .team{
+        .team {
           div {
-            background-color: $teamColor !important;
+            background-color: $teamColor  !important;
           }
         }
+
         .case {
           div {
-            background-color: $caseColor !important;
+            background-color: $caseColor  !important;
           }
         }
+
         .appointment {
           div {
-            background-color: $appointmentColor !important;
+            background-color: $appointmentColor  !important;
           }
         }
 
@@ -295,6 +298,7 @@ main {
           margin: 0 20px;
           width: 228px;
           height: 458px;
+
           img {
             width: 100%;
             height: 100%;
@@ -304,7 +308,7 @@ main {
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: 90px;
             height: 90px;
             border-radius: 50%;
@@ -312,10 +316,11 @@ main {
             text-align: center;
             line-height: 90px;
             color: #fff;
-            > div {
+
+            >div {
               position: absolute;
               bottom: -10px;
-              left:50%;
+              left: 50%;
               width: 20px;
               height: 20px;
               background-color: #8c462b;
@@ -328,6 +333,7 @@ main {
 
     .news {
       width: 100%;
+
       .content-news {
         position: relative;
         // width: 100%;
@@ -336,7 +342,8 @@ main {
         align-items: center;
         height: 765px;
         background: url("../assets/index/小banner1.png") no-repeat 0 0 / 100% 100%;
-         &::before {
+
+        &::before {
           position: absolute;
           top: 0;
           left: 0;
@@ -344,8 +351,9 @@ main {
           z-index: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0,0,0,.4);
-         }
+          background-color: rgba(0, 0, 0, .4);
+        }
+
         .news-nav {
           ul {
             display: flex;
@@ -353,9 +361,10 @@ main {
             top: 0;
             left: 50%;
             width: 500px;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             justify-content: space-around;
             align-items: center;
+
             li {
               height: 30px;
               width: 60px;
@@ -368,14 +377,18 @@ main {
             }
           }
         }
+
         .content-news-box {
           width: 100%;
           display: flex;
           justify-content: space-between;
-          .left,.right {
+
+          .left,
+          .right {
             display: flex;
             justify-content: center;
             align-items: center;
+
             div {
               width: 80px;
               height: 80px;
@@ -384,27 +397,33 @@ main {
               font-size: 28px;
             }
           }
+
           .items-box {
             z-index: 1;
             width: 200px;
             height: 400px;
             // background-color: pink;
           }
+
           .center {
             flex-grow: 1;
             display: flex;
+
             .center-left {
               background-color: #fff;
               width: 50%;
+
               .imgBox {
                 width: 100%;
                 height: 300px;
+
                 img {
                   width: 100%;
                   height: 100%;
                 }
-                
+
               }
+
               .textBox {
                 position: relative;
                 display: flex;
@@ -412,15 +431,18 @@ main {
                 justify-content: center;
                 text-align: left;
                 padding: 18px 20px;
+
                 h1 {
                   margin-bottom: 10px;
                   font-size: 16px;
                   font-weight: 600;
                 }
+
                 p {
                   line-height: 20px;
                   font-size: 12px;
                 }
+
                 .details-btn {
                   position: absolute;
                   top: 65px;
@@ -435,6 +457,7 @@ main {
                 }
               }
             }
+
             .center-right {
               margin-left: 10px;
               display: flex;
@@ -442,12 +465,14 @@ main {
 
               width: 50%;
               height: 100%;
+
               .item {
                 position: relative;
                 display: flex;
                 align-items: center;
                 height: 133px;
                 background-color: #fff;
+
                 .details-btn {
                   position: absolute;
                   bottom: 20px;
@@ -460,19 +485,23 @@ main {
                   border-radius: 10px;
                   border: 1px solid #000;
                 }
+
                 .text-box {
                   box-sizing: border-box;
                   padding: 10px 20px;
+
                   h1 {
                     margin-bottom: 10px;
                     font-size: 16px;
                     font-weight: 400;
                   }
+
                   p {
                     line-height: 20px;
                     font-size: 12px;
                   }
                 }
+
                 .img-box {
                   width: 132px;
                   padding: 10px;
@@ -499,21 +528,27 @@ footer {
   padding: 50px;
   height: 314px;
   align-items: center;
+  justify-content: center;
   background-color: #202020;
-  .left ,.right{
-  display: flex;
-  align-items: start;
+
+  .left,
+  .right {
+    display: flex;
+    align-items: start;
+
     ul {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
       margin: 0 50px;
+
       :first-child {
         font-size: 16px;
         font-weight: 600;
         color: #979797;
       }
+
       li {
         font-size: 14px;
         margin: 12px 0;
@@ -521,8 +556,10 @@ footer {
       }
     }
   }
+
   .right {
     position: relative;
+
     &::before {
       position: absolute;
       left: 15px;
@@ -531,13 +568,16 @@ footer {
       height: 100px;
       border-left: 1px solid #4d4d4d;
     }
+
     li {
       display: flex;
+
       i {
         text-align: center;
         line-height: 20px;
         font-size: 26px !important;
       }
+
       p {
         margin-left: 20px;
         text-align: left;

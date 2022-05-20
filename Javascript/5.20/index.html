@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>函数</title>
+    </head>
+    <body>
+        <script>
+            // var sum = 0
+            // for (var i = 1; i <= 100; i++) {
+            //     sum += i
+            // }
+            // console.log(sum)
+            // 调用一个函数，功能: 实现不同的累加效果
+            // function countSum(num) {
+            //     var sum = 0
+            //     for (var i = 1; i <= num; i++) {
+            //         sum += i
+            //     }
+            //     console.log(sum)
+            // }
+
+            // countSum(10)
+            // countSum(100)
+
+            // // 写一个函数，专门用来计算两值之和
+            // function countTwo(num1, num2) {
+            //     console.log(num1 + num2)
+            // }
+            // countTwo(2, 3)
+
+            // function even(num) {
+            //     if (num % 2 == 0) {
+            //         return true
+            //     } else {
+            //         return false
+            //     }
+            // }
+
+            // var flag = even(2)
+
+            // if (flag) {
+            //     console.log('这是偶数')
+            // } else {
+            //     console.log('这是奇数')
+            // }
+
+            // ---------------------函数进阶------------------------------------------------------
+
+            // 写一个函数，如果传进来的是奇数，累加器（自动执行对应传递进来的次数）
+            // 如果传进来的是一个偶数，累乘器（）
+            // 我们要将功能按函数区分
+            // 目的：
+            // 1. 代码会简洁优雅
+            // 2. 代码可读性强
+            // 3. 代码可维护性高
+            // var sum = 0
+            // function even(num) {
+            //     if (num % 2 == 0) {
+            //         // return
+            //         sum = 1
+            //         for (var i = 0; i < num; i++) {
+            //             sum *= num
+            //         }
+            //         console.log(sum)
+            //         return true
+            //     } else {
+            //         for (var i = 0; i <= num; i++) {
+            //             sum += num
+            //         }
+            //         console.log(sum)
+            //         return false
+            //     }
+            // }
+            // console.log(even(4))
+            //专门用来做累加的  返回一个结果
+            // var total = 0
+            // function add(num) {
+            //     for (var i = 0; i <= num; i++) {
+            //         total += num
+            //     }
+            //     console.log(total)
+            //     return total
+            // }
+
+            // // 专门用来做累乘 返回一个结果
+            // function mutiple(num) {
+            //     total = 1
+            //     for (var i = 0; i < num; i++) {
+            //         total *= num
+            //     }
+            //     console.log(total)
+            //     return total
+            // }
+
+            // console.log(add(4), mutiple(3))
+
+            // // 专门用来判断奇偶数的
+            // function odd(num) {
+            //     if (num % 2 == 0) {
+            //         return mutiple(num)
+            //     } else {
+            //         return add(num)
+            //     }
+            // }
+
+            // console.log(odd(4))
+
+            // 2. 递归
+            // Maximum call stack size exceeded 这个报错指的是 栈溢出
+            // 递归函数一定要注意栈溢出问题
+            // 解决： 设置一个出口（设置一个终止条件）
+
+            // 1+2+3...+100
+            function fn(num) {
+                if (num == 0) {
+                    return 0
+                }
+                return num + fn(num - 1)
+                // 100 + fn(99)
+                // 100 + 99 + fn(98)
+                // 100 + 99 + 98 + fn(97)
+            }
+            var sum = fn(100)
+            console.log(sum)
+
+            // var money = 1000
+            // function fn2(day) {
+            //     if (day == 0) {
+            //         return money
+            //     }
+            //     return 1.01 * fn2(day - 1)
+            // }
+            // console.log(fn2(5))
+        </script>
+    </body>
+</html>

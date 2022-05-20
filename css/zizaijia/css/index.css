@@ -359,13 +359,15 @@ main .content-box .news .content-news .content-news-box {
   justify-content: space-between;
 }
 
-main .content-box .news .content-news .content-news-box .left, main .content-box .news .content-news .content-news-box .right {
+main .content-box .news .content-news .content-news-box .left,
+main .content-box .news .content-news .content-news-box .right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main .content-box .news .content-news .content-news-box .left div, main .content-box .news .content-news .content-news-box .right div {
+main .content-box .news .content-news .content-news-box .left div,
+main .content-box .news .content-news .content-news-box .right div {
   width: 80px;
   height: 80px;
   border: 1px solid #fff;
@@ -492,15 +494,18 @@ footer {
   padding: 50px;
   height: 314px;
   align-items: center;
+  justify-content: center;
   background-color: #202020;
 }
 
-footer .left, footer .right {
+footer .left,
+footer .right {
   display: flex;
   align-items: start;
 }
 
-footer .left ul, footer .right ul {
+footer .left ul,
+footer .right ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -508,13 +513,15 @@ footer .left ul, footer .right ul {
   margin: 0 50px;
 }
 
-footer .left ul :first-child, footer .right ul :first-child {
+footer .left ul :first-child,
+footer .right ul :first-child {
   font-size: 16px;
   font-weight: 600;
   color: #979797;
 }
 
-footer .left ul li, footer .right ul li {
+footer .left ul li,
+footer .right ul li {
   font-size: 14px;
   margin: 12px 0;
   color: #919191;
