@@ -80,22 +80,27 @@
             //     }
             // }
 
-            // console.log(fn(16, 8))
+            // console.log(fn(2, 8))
 
             // 提高提：
             //编写函数digit(num, k)，函数功能是：求整数num从右边开始的第k位数字的值，
             // 如果num位数不⾜k位则返回0。
 
             // function digit(num, k) {
-            //     // console.log()
             //     var strNum = String(num)
+            //     var newNum = []
+            //     for (var i = strNum.length - 1; i >= 0; i--) {
+            //         newNum[newNum.length] = strNum[i]
+            //     }
+            //     console.log(newNum)
             //     if (strNum.length < k) {
             //         return 0
             //     } else {
-            //         return parseInt(strNum[k - 1])
+            //         return Number(newNum[k - 1])
+            //         // console.log(newNum[k - 1])
             //     }
             // }
-            // console.log(digit(15385, 2))
+            // console.log(digit(15385, 7))
         </script>
     </body>
 </html>
