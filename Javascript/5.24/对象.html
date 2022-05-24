@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>对象</title>
+    </head>
+    <body>
+        1.意义和作用 ：对象和数组一样都是数据的集合，但是在一些情况下，
+        对象比数组的格式更加的直接、简洁。 2. 什么是对象： 属性指的是： 对象的描述（特征）通常是名词
+        方法指的是： 对象的行为 通常是动词
+        <script>
+            // let arr = [1, 2, 'a']
+            // let obj = {
+            //     a: 1,
+            //     b: 2
+            // }
+
+            // 通过构造函数（大写字母开头）创建对象
+            let obj = new Object()
+
+            // 字面量创建 直接 let name = {}
+            let wang = {
+                name: 'wangxinlin',
+                age: 18,
+                sex: 'nv',
+                job: 'singer',
+                // 方法即行为
+                sing: function (a) {
+                    console.log(a)
+                },
+                dance: function () {
+                    console.log('dance')
+                }
+            }
+
+            // 调用对象的属性
+            console.log(wang.job) //singer
+            console.log(wang['age']) //18
+
+            // 当访问没有定义的属性时，不会报错，而是undefined
+            console.log(wang.haha) //undefined
+
+            // 我们可以随时去添加一个对象的属性和方法
+            wang.haha = '哈哈'
+            console.log(wang)
+
+            // 修改属性的操作
+            wang.haha = '伤心'
+            // wang['haha'] = '伤心'
+            console.log(wang)
+
+            // 对象中如何调用方法
+            // 只要看到函数（方法）就要联想到 参数 返回值
+            wang.sing('love')
+
+            // for...in 遍历对象    // for...of
+            for (let key in wang) {
+                console.log(key)
+                console.log(wang[key]) // wang['haha']
+            }
+        </script>
+    </body>
+</html>

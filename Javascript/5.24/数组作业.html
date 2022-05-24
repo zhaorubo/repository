@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <!-- <base href="http://edu.bluej.cn/public/uploads/20180425/20180425114737数组/js/"> -->
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            //1.移除数组 arr[1, 2, 3, 4, 2] 中的2。不要直接修改数组 arr，结果返回新的数组
+            let arr = [1, 2, 3, 4, 2]
+            // arr = arr.filter(function (ele, index) {
+            //     return ele != 2
+            // })
+            // console.log(arr)
+            //2.定义一个函数,能在数组 arr[1, 2, 3, 4, 2] 的 "2"后面添加元素 "Melon"。不要直接修改数组 arr，结果返回新的数组
+            // function fn(arr, doc) {
+            //     let newArr = []
+            //     let a = arr.filter(function (ele, index) {
+            //         if (ele === 2) {
+            //             newArr.push(ele)
+            //             newArr.push(doc)
+            //         } else {
+            //             newArr.push(ele)
+            //         }
+            //     })
+            //     return newArr
+            // }
+            // var a = fn(arr, 'Melon')
+            // console.log(a)
+            //3.统计数组 arr[1, 2, 3, 4, 2] 中2出现的次数
+            // var newArr = arr.filter(function (ele, index) {
+            //     return ele != 2
+            // })
+            // console.log(arr.length - newArr.length)
+            //4.找出数组 arr[1, 2, 3, "melon", 4, "melon", 2, 4, "melon"] 中重复出现过的元素,并用数组将重复元素装起来输出
+            // let arr = [1, 2, 3, 'melon', 4, 'melon', 2, 4, 'melon']
+
+            // let newArr = []
+            // newArr = arr.filter(function (ele, index) {
+            //     return arr.indexOf(ele) !== index
+            // })
+            // newArr = newArr.filter(function (ele, index) {
+            //     return newArr.indexOf(ele) === index
+            // })
+            // console.log(newArr)
+            //5.在arr里面输出年龄小于17的对象
+            // var arr = [
+            //     {
+            //         name: '111',
+            //         sex: 'boy',
+            //         age: 18
+            //     },
+            //     {
+            //         name: '222',
+            //         sex: 'girl',
+            //         age: 17
+            //     },
+            //     {
+            //         name: '333',
+            //         sex: 'boy',
+            //         age: 16
+            //     },
+            //     {
+            //         name: '444',
+            //         sex: 'girl',
+            //         age: 15
+            //     },
+            //     {
+            //         name: '555',
+            //         sex: 'boy',
+            //         age: 20
+            //     }
+            // ]
+
+            // let newArr = arr.filter(function (ele, index) {
+            //     return ele.age < 17
+            // })
+            // console.log(newArr)
+        </script>
+    </body>
+</html>
