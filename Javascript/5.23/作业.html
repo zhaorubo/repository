@@ -13,8 +13,8 @@
             // })();
             // var z;
             // console.log(y); //1
-            // console.log(z); //undefineds
-            // console.log(x); //1
+            // console.log(z); //undefined
+            // console.log(x); //报错
 
             // var a, b
             // (function () {
@@ -31,9 +31,9 @@
             // (function() {
             //   if (typeof friendName === 'undefined') {
             //     var friendName = 'Jack';
-            //     console.log('Goodbye ' + friendName);
+            //     console.log('Goodbye ' + friendName); // goodbay jack
             //   } else {
-            //     console.log('Hello ' + friendName);//hello world
+            //     console.log('Hello ' + friendName);
             //   }
             // })();
 
@@ -63,10 +63,11 @@
             // function a() {
             //     var temp = 10
             //     function b() {
-            //         console.log(temp)
+            //         console.log(temp) // 10
             //     }
             //     b()
             // }
+            // a()
 
             // function a() {
             //     var temp = 10
@@ -75,9 +76,7 @@
             // function b() {
             //     console.log(temp) //报错
             // }
-            // a() // 报错
-
-            // a() // 报错
+            // a()
 
             // var a = 3
             // function c() {
@@ -93,7 +92,7 @@
             //     return {
             //         fun: function (m) {
             //             return fun(m, n)
-            //         }
+            //         }`
             //     }
             // }
             // // 此时是一个对象
