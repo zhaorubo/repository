@@ -12,6 +12,14 @@ body {
 
 /* index.html-css */
 
+@media screen and (min-width:100px) and (max-width:750px) {
+  .HomeWorkList {
+    max-width: 380px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}
+
 /* 淡入动画 */
 @keyframes fade-in {
   0% {
@@ -198,8 +206,3 @@ body {
 }
 
 
-.HomeWorkList {
-  max-width: 800px;
-  max-height: 300px;
-  overflow-y: scroll;
-}

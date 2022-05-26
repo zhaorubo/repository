@@ -33,7 +33,7 @@
             // let a = ''
             // foo.split('-').forEach(function (ele, index) {
             //     if (index == 0) {
-            //         a += ele.charAt(0).toLowerCase() + ele.slice(1)
+            //         a += ele
             //     } else {
             //         a += ele.charAt(0).toUpperCase() + ele.slice(1)
             //     }
@@ -59,40 +59,58 @@
             //             str = str.replace(str[i], '日')
             //         }
             //     }
-            //     console.log(str)
+            //     return str
             // }
-            // fn(str)
-            // 6. 请你设计一个函数，当调用这个函数的时候，传入一个随意且正确时间戳后
+            // let a = fn(str)
+            // console.log(a)
+            // 6. 请你设计一个函数，当调用这个函数的时候
             // 就输出  正确的格式 2021年4月13日星期二 15时07分04秒
-            // function fn(time) {
-            //     let date = new Date(time)
-            //     return `${date.getFullYear()}年
-            //     ${date.getMonth() + 1}月
-            //     ${date.getDate()}日
-            //     ${date.getHours()} 时
-            //     ${date.getMinutes()}分
-            //     ${date.getSeconds()}秒`
-            // }
-            // let time = fn(1653477356692)
-            // console.log(+new Date())
-            // console.log(time)
-            // 7.随机5个不重复的数字[1-5]，并且用数组装起来(Math.random())
-            let arr = []
-            function getRandomArbitrary(min, max) {
-                return Math.random() * (max - min) + min
-            }
+            // let date = new Date()
+            // let year = date.getFullYear()
+            // let month = date.getMonth() + 1
+            // let day = date.getDay()
+            // let arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            // let day1 = date.getDate()
+            // let hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours()
+            // let minute = date.getMinutes()
+            // let second = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds()
+            // console.log(`${year}年${month}月${day1}日-${arr[day]}-${hour}:${minute}:${second}`)
+            // 三元表达式
+            // 语法结构：
+            // 条件表达式 ？ 成立返回值：失败返回值
+            // 使用场景，一个需要返回内容且条件相对简单
+            // let a = 2 < 1 ? 'haha' : 'hehe'
 
-            for (let i = 0; i < 5; i++) {
-                arr.push(Math.ceil(getRandomArbitrary(1, 5)))
-                console.log(arr)
-                for (let j = 0; j < arr.length - 1; j++) {
-                    if (arr[i] == arr[j]) {
-                        i--
-                        console.log(arr)
-                    }
-                }
-            }
-            console.log(arr)
+            // 7.随机5个不重复的数字[1-5]，并且用数组装起来(Math.random())
+            // let arr = []
+            // function getRandomArbitrary(min, max) {
+            //     return Math.floor(Math.random() * max + min)
+            // }
+
+            // for (let i = 0; i < 5; i++) {
+            //     let num = getRandomArbitrary(1, 5) // 获取随机数
+            //     if (arr.indexOf(num) == -1) {
+            //         // 如果发现元素不重复，直接push
+            //         arr.push(num)
+            //     } else {
+            //         // 如果你发现元素重复了，记得i--
+            //         i--
+            //     }
+            // }
+            // let i = 0
+            // while (i < 5) {
+            //     // if (arr.length == 5) {
+            //     //     break
+            //     // }
+            //     let num = getRandomArbitrary(1, 5)
+            //     i++
+            //     if (arr.indexOf(num) == -1) {
+            //         arr.push(num)
+            //     } else {
+            //         i--
+            //     }
+            // }
+            // console.log(arr)
         </script>
     </body>
 </html>
