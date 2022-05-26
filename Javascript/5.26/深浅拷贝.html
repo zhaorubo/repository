@@ -36,7 +36,7 @@
                     if (item instanceof Array) {
                         // 数组
                         console.log('数组')
-                        // 同样去开辟一个空间
+                        // 开辟内存空间
                         newObj[key] = []
                         // 然后再去走deepClone的逻辑
                         deepClone(newObj[key], item)
