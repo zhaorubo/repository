@@ -39,15 +39,16 @@
                         // 开辟内存空间
                         newObj[key] = []
                         // 然后再去走deepClone的逻辑
-                        deepClone(newObj[key], item)
+                        deepClone(item, newObj[key])
                     } else if (item instanceof Object) {
                         // 对象
                         console.log('对象')
                         newObj[key] = {}
-                        deepClone(newObj[key], item)
+                        deepClone(item, newObj[key])
                     } else {
                         // 简单数据类型
                         console.log('简单')
+                        newObj[key] = item
                     }
                 }
             }
@@ -61,9 +62,11 @@
                     apple: '苹果'
                 }
             }
-            let newObj
+            let newObj = {}
             deepClone(obj, newObj)
-            // console.log(newObj)
+            console.log(newObj)
+            console.log((newObj.color[1] = 'yes'))
+            console.log(obj)
             // newObj.age = 20
             // console.log(obj)
             // console.log(newObj)
