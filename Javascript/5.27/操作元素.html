@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>操作元素</title>
+        <style>
+            .demo {
+                width: 500px;
+                height: 500px;
+                background-color: skyblue;
+            }
+            .active {
+                background-color: pink;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo">我是盒子</div>
+        <script>
+            let demo = document.querySelector('.demo')
+            // demo.addEventListener('click', function () {
+            //     // 做更改文本的操作
+            //     demo.innerHTML = '<h1>我是大聪明</h1>'
+            //     demo.innerText = '<h1>我是大聪明</h1>'
+            // })
+            let i = 1
+            demo.addEventListener('click', function () {
+                // 操作style属性
+                // demo.style.backgroundColor = 'red'
+                // demo.style.fonSize = '20px'
+                // 通过类名更改样式
+                // 给demo节点的样式列表中添加一个类
+                // demo.classList.add('active')
+                if (i % 2 != 0) {
+                    // demo.style.backgroundColor = 'skyblue'
+                    // demo.classList.remove('active')
+                    // demo.setAttribute('class', 'demo active')
+                    i++
+                } else {
+                    // demo.style.backgroundColor = 'red'
+                    // demo.classList.add('active')
+                    // demo.setAttribute('class', 'demo ')
+                    i++
+                }
+                // demo.classList.remove('类名')
+            })
+        </script>
+    </body>
+</html>

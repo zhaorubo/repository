@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document object model</title>
+        <style>
+            .baba {
+                width: 500px;
+                height: 500px;
+                background-color: skyblue;
+            }
+            .son {
+                width: 300px;
+                height: 300px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="baba" id="demo">
+            baba
+            <div class="son">son</div>
+            <div class="son">son</div>
+            <div class="son">son</div>
+        </div>
+
+        <div class="aa" id="demo">
+            baba
+            <div class="son">son</div>
+            <div class="son">son</div>
+            <div class="son">son</div>
+        </div>
+        <script>
+            let baba = document.querySelector('.baba')
+            baba.addEventListener('click', function () {
+                console.log('a')
+            })
+
+            // let demo = document.getElementById('demo')
+            // console.log(demo)
+
+            // let son = document.getElementsByClassName('son')
+            // console.log(son)
+
+            // let div = document.getElementsByTagName('div')
+            // console.log(div)
+
+            // 开发常用的获取元素方法 ie8+
+            // 不考虑兼容ie的情况下随意使用
+            // let baba = document.querySelector('.baba:first-child')
+            // console.log(baba)
+
+            // let son1 = document.querySelectorAll('.son')
+            // console.log(son1)
+
+            // console.log(document.body) // 获取body节点
+            // console.log(document.documentElement) // 获取html节点
+            // // 1 获取元素
+            // let demo = document.querySelector('.demo')
+            // // 2 绑定事件
+            // demo.addEventListener('click', function () {
+            //     console.log('点击了色块')
+            //     // 3 事件处理函数
+            //     demo.innerHTML = `<h1>Dom</h1>`
+            //     dome.classList.add('aa')
+            // })
+        </script>
+    </body>
+</html>

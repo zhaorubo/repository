@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .box {
+  position: fixed;
+  top: 0;
+  left: 0;
+} */
+.header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-color:rgb(70, 11, 126);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.header button {
+  width: 100px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: pink;
+  cursor:pointer
+}
+.left-top-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  opacity: 0.4;
+  cursor: pointer;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 40px;
+  
+}
+.left-top-box i {
+  color: #fff ;
+}
+.main {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.content-item h3{
+  margin: 40px 0;
+  font-size: 30px;
+}
+
+.content-item ul {
+  margin-left: 30px;
+}
+.login-box  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 440px;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  /* animation: ani 1s ease-in; */
+  /* display: none; */
+}
+
+
+/* 动画类 */
+.ani  {
+  animation: ani 1s ease-in;
+}
+
+.none {
+  display: none;
+}
+
+.boxsmall::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: .3;
+  /* display: none; */
+}
+
+.login-box .login-header{
+    width: 100%;
+    height: 50px;
+    background-color:rgb(70, 11, 126);
+    opacity: .7;
+    color: #fff;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-box .login-header span {
+  cursor:pointer
+}
+.login-box .login-header h3 {
+    font-weight: 600;
+    color: #fff;
+}
+.login-box .login-content {
+  padding: 30px 16px;
+}
+.login-box .login-content h4 {
+  margin-bottom: 15px;
+
+}
+.login-box .login-content span {
+  font-weight: 600;
+}
+.login-box .login-content input{
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 6px 0;
+}
+.login-box .login-content button {
+  width: 60px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(70, 11, 126);
+  color: #fff;
+  cursor:pointer
+}
+.body-style {
+  transform: translateX(200px);
+  transition: all .5s ease;
+}
+
+.body-style-none {
+  transform: translateX(0);
+  transition: all .5s ease;
+}
+
+aside {
+  position: fixed;
+  /* float: left; */
+  /* top: 0;
+  left: 0; */
+  z-index: 99;  
+  transform: translate(-100%);
+  height: 100vh;
+  width: 200px;
+  background-color:  rgb(70, 11, 126);
+  border-right: 1px solid #ccc;
+  /* display: none; */
+}
+
+
+aside .list-box ul {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+aside .list-box ul li{
+  box-sizing: border-box;
+  width: 200px;
+  height: 60px;
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .list-box ul li:first-child {
+  /* background-color: skyblue; */
+  height: 150px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+aside .list-box ul li:first-child img {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 50%;
+}
