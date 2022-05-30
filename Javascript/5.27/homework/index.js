@@ -19,8 +19,8 @@ let body = document.body
 let count = 1
 leftBtn.addEventListener('click', function () {
     if (count % 2 == 0) {
-        body.classList.add('body-style-none')
         body.classList.remove('body-style')
+        body.classList.add('body-style-none')
     } else {
         body.classList.add('body-style')
         body.classList.remove('body-style-none')
