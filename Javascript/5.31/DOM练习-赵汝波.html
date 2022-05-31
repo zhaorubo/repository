@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM练习--轮播图</title>
+    </head>
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .box {
+                width: 500px;
+                height: 250px;
+                background-color: skyblue;
+                margin: 0 auto;
+                position: relative;
+            }
+            .banner {
+                width: 500px;
+                height: 250px;
+                background-color: pink;
+                overflow: hidden;
+            }
+            ul {
+                width: 100%;
+                height: 100%;
+                white-space: nowrap;
+                font-size: 0;
+                transform: translate(-100%);
+            }
+            li {
+                display: inline-block;
+                font-size: 18px;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            .left {
+                position: absolute;
+                left: 0;
+                top: 50%;
+            }
+            .right {
+                position: absolute;
+                right: 0;
+                top: 50%;
+            }
+
+            .one {
+                background-color: green;
+            }
+
+            .two {
+                background-color: skyblue;
+            }
+
+            .three {
+                background-color: orange;
+            }
+        </style>
+        <div class="box">
+            <div class="banner">
+                <ul>
+                    <!-- <li class="three">图片3</li> -->
+
+                    <li class="one">图片1</li>
+                    <li class="two">图片2</li>
+                    <li class="three">图片3</li>
+                    <li class="three">图片4</li>
+
+                    <!-- <li class="one">图片1</li> -->
+                </ul>
+            </div>
+            <button class="left">左</button>
+            <button class="right">右</button>
+        </div>
+        <script>
+            let rightBtn = document.querySelector('.right')
+            let leftBtn = document.querySelector('.left')
+            let ul = document.querySelector('ul')
+            let count = 1
+            let flag = true
+            ul.appendChild(ul.firstElementChild.cloneNode(true))
+
+            ul.insertBefore(
+                ul.lastElementChild.previousElementSibling.cloneNode(true),
+                ul.firstElementChild
+            )
+            let li = document.querySelectorAll('li')
+            console.log(li)
+
+            ul.addEventListener('transitionend', function () {
+                // 判断是否时最后一张图片
+                // 如果是最后一张，闪现回到图片1
+                if (count > li.length - 2) {
+                    count = 1
+                    ul.style.transition = `0s`
+                    ul.style.transform = `translateX(-${count}00%)`
+                }
+                if (count < 1) {
+                    count = li.length - 2
+                    ul.style.transition = `0s`
+                    ul.style.transform = `translateX(-${count}00%)`
+                }
+                flag = true
+            })
+            rightBtn.addEventListener('click', function () {
+                if (flag) {
+                    count++
+                    ul.style.transition = `1s`
+                    ul.style.transform = `translateX(-${count}00%)`
+                    flag = false
+                }
+            })
+            leftBtn.addEventListener('click', function () {
+                if (flag) {
+                    count--
+                    ul.style.transition = `1s`
+                    ul.style.transform = `translateX(-${count * 100}%)`
+                    flag = false
+                }
+            })
+        </script>
+    </body>
+</html>

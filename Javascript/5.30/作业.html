@@ -77,18 +77,16 @@
               })
             })
               sort.addEventListener('click', () => {
-                let tr = document.querySelectorAll('tr')
-              tr_arr = Array.from(tr)
+                let tr = document.querySelectorAll('tr:not(:first-child)')
+                let tr_arr = Array.from(tr)
               tr_arr.sort(function(a,b) {
                return a.firstElementChild.nextElementSibling.innerText - b.firstElementChild.nextElementSibling.innerText
               })
 
-              let string = tr_arr.join('')
-              tr.forEach(function(ele,index) {
-                ele.remove()
-              })
-
               tr_arr.forEach(function(ele) {
+                // appendChild()  
+                // ele如果是原本就有的结构是 不会重新插入到最后
+                // 会覆盖
                 tbody.appendChild(ele)
               })
               })

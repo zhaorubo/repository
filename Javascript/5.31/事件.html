@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            .baba {
+                width: 500px;
+                height: 500px;
+                background-color: skyblue;
+            }
+            .son {
+                width: 300px;
+                height: 300px;
+                background-color: pink;
+            }
+        </style>
+        <!-- 事件冒泡 
+                先触发自身的函数，执行完毕后，触发上级事件。直到 body 
+            事件捕获
+                先触发上级事件，执行完毕后，再触发自身事件。直到 body 
+            如何设置事件捕获或者冒泡
+            node.addEventListener(事件类型,事件处理函数,事件冒泡或捕获)
+            事件冒泡或捕获 是一个布尔值
+            默认值是false 事件是冒泡
+            如果是 true 事件是捕获
+              
+
+
+
+            如何 停止 冒泡或者捕获
+
+            事件对象 event 是事件处理函数中的 参数
+            作用： 返回的是事件触发的所有内容信息  如鼠标点击的位置
+            属性
+            方法：
+              停止冒泡  e.stopPropagation()
+              停止默认行为  e.preventDefault()
+              常见的默认行为  submit刷新 和 a标签跳转
+              -->
+        <!-- 
+          事件冒泡的应用（使用场景） ： 事件委托
+         -->
+        <div class="baba">
+            <div class="son"></div>
+        </div>
+        <form model="">
+            <input type="text" />
+            <button type="submit"></button>
+            <!-- submit 是默认行为 点击后自动刷新 -->
+        </form>
+        <script>
+            let btn = document.querySelector('button')
+            btn.addEventListener('click', function (e) {
+                console.log(e)
+                e.preventDefault()
+            })
+
+            let baba = document.querySelector('.baba')
+            let son = document.querySelector('.son')
+
+            baba.addEventListener('click', e => {
+                console.log('baba')
+                e.stopPropagation()
+                console.log(e)
+            })
+
+            son.addEventListener('click', e => {
+                console.log('son')
+                console.log(e)
+            })
+        </script>
+    </body>
+</html>

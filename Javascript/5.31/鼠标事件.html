@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 常用的鼠标事件 
+         click    鼠标点击
+         mouseup  鼠标松开触发
+         mousedown  鼠标摁下触发
+
+
+         mouseenter 
+         moseout 
+         mouseleave 
+         mouseover 
+
+         mousemove -->
+
+        <!-- mouseenter 和 mouseover 都是鼠标划入区域触发的事件
+          不同点
+            mouseenter 只有第一次的时候会触发冒泡，后续是不再触发
+            mouseover 永远触发
+
+            mouseout
+            1. 移出本身会触发（进入子节点）
+            2. 会冒泡
+        -->
+        <style>
+            .box {
+                width: 500px;
+                height: 500px;
+                background-color: orange;
+            }
+            .active {
+                width: 800px;
+                transition: all 1s ease;
+            }
+        </style>
+        <div class="box"></div>
+        <button class="btn">点击</button>
+        <style>
+            .baba {
+                width: 500px;
+                height: 500px;
+                background-color: skyblue;
+            }
+            .son {
+                width: 300px;
+                height: 300px;
+                background-color: pink;
+            }
+        </style>
+        <div class="baba">
+            <div class="son"></div>
+        </div>
+        <script>
+            // let baba = document.querySelector('.baba')
+            // let son = document.querySelector('.son')
+
+            // baba.addEventListener('mouseover', e => {
+            //     console.log('baba')
+            // })
+
+            // son.addEventListener('mouseover', e => {
+            //     console.log('son')
+            // })
+            let btn = document.querySelector('.btn')
+            let box = document.querySelector('.box')
+            btn.addEventListener('click', function () {
+                box.classList.add('active')
+            })
+            box.addEventListener('transitionend', function () {
+                alert('动画结束了')
+            })
+        </script>
+    </body>
+</html>

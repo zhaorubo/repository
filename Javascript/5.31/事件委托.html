@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 事件冒泡的应用（使用场景） ： 事件委托 -->
+        <!-- 事件委托
+            是一个优化了我们绑定事件
+            原理：基于事件冒泡
+            使用场景：只要看到循环绑定点击事件的时候，就不要用了，改成事件委托
+            找父节点去绑定事件（有大吃大）
+            使用的步骤如下
+            1. 找到父节点，绑定点击事件并设置事件对象e
+            2. 在子节点中设置 自定义属性（为了更好的判断，为了做节点操作）
+            3. e.target.dataset.属性名  来获取节点中自定义属性值
+        -->
+        <ul>
+            <li data-index="1">1</li>
+            <li data-index="2">2</li>
+            <li data-index="3">3</li>
+            <li data-index="4">4</li>
+            <li data-index="5">5</li>
+        </ul>
+        <!-- 点击对应的li 再控制台中输出对应的文本 -->
+        <!-- 搭配自定义属性去完成 -->
+        <!-- 自定义属性固定语法  data-任意="数值" -->
+        <!-- 通过事件对象获取自定义属性来做判断 -->
+        <script>
+            let lis = document.querySelectorAll('li')
+            lis.forEach(function (ele) {
+                ele.addEventListener('click', function () {
+                    console.log(ele.innerHTML)
+                })
+            })
+
+            let ul = document.querySelector('ul')
+            ul.addEventListener('click', function (e) {
+                console.log('ul')
+                // 那么如何知道我点的是哪一个呢
+                // 如何获取自定义属性
+                let index = e.target.dataset.index
+                console.log(e)
+                console.log(index)
+                // e.target.dataset.index 判断我当前的是哪个节点
+            })
+        </script>
+    </body>
+</html>
