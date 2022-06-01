@@ -49,8 +49,16 @@
         console.log(newstr)
 
         // money
-        // console.log(obj.money / 1000)
-        for (let i = 0; i < obj.money.length; i++) {}
+        let num = obj.money
+        // console.log(count)
+        let money = []
+        while (num > 0) {
+            money.unshift(num % 1000)
+            num = Math.floor(num / 1000)
+        }
+        console.log(money)
+        obj.money = money.join()
+        console.log(obj.money)
 
         // Time
         let date = new Date(parseInt(obj.time))
