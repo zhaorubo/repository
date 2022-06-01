@@ -5,84 +5,66 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <style>
-            .div-dird {
-                width: 300px;
-                height: 300px;
-                border: 1px solid #000;
-                grid-template-rows: 100px 100px 100px;
-                grid-template-columns: 100px 100px 100px;
-                display: grid;
-            }
-            .div-dird div {
-                background: skyblue;
-                border: 1px solid skyblue;
-                background-clip: content-box;
-                padding: 10px;
-                box-sizing: border-box;
-            }
-        </style>
     </head>
     <body>
         <script>
-            // let obj3 = {
-            //     a: 1,
-            //     b: '2',
-            //     e: 3,
-            //     c: { d: '1', e: 2 },
-            //     d: [1, 2, 3]
-            // }
-            // let newobj2 = {}
-            // function CloneTwo(oldObj, newObj) {
-            //     for (let key in oldObj) {
-            //         let item = oldObj[key]
-            //         if (item instanceof Array) {
-            //             console.log('sz')
-            //             newObj[key] = []
-            //             CloneTwo(item, newObj[key])
-            //         } else if (item instanceof Object) {
-            //             console.log('dx')
-            //             newObj[key] = {}
-            //             CloneTwo(item, newObj[key])
-            //         } else {
-            //             newObj[key] = item
-            //         }
-            //     }
-            // }
-            // CloneTwo(obj3, newobj2)
-            // newobj2.c.d = 'haha'
-            // console.log(obj3)
-            // console.log(newobj2)
+            let obj = {
+                name: 'xiaohuozi',
+                age: 18,
+                ect: {
+                    name: 'xiaohong',
+                    age: 20
+                },
+                arr: [1, 2, 3, 4]
+            }
 
-            // var a = 0
-            // if (a == 1 && a == 2 && a == 3) {
-            //     console.log(1)
-            // }
-            //  function fn() {
+            function deepClone(obj) {
+                let deepObj
+                if (obj instanceof Array) {
+                    let deepObj = []
+                    for (const key in obj) {
+                        deepObj[key] = deepClone(obj[key])
+                    }
+                    return deepObj
+                } else if (obj instanceof Object) {
+                    let deepObj = {}
+                    for (const key in obj) {
+                        deepObj[key] = deepClone(obj[key])
+                    }
+                    return deepObj
+                } else {
+                    return obj
+                }
 
-            //  }
-            // let a = {
-            //     toString: (function () {
-            //         let x = 1
-            //         return function () {
-            //             return x++
-            //         }
-            //     })()
-            // }
-            // if (a == 1 && a == 2 && a == 3) {
-            //     console.log(1)
-            // }
+                return deepObj
+            }
+            let newObj = {}
+            function deepCloneTwo(oldObj, newObj) {
+                for (const key in oldObj) {
+                    let item = oldObj[key]
+                    if (item instanceof Array) {
+                        newObj[key] = []
+                        deepCloneTwo(item, newObj[key])
+                    } else if (item instanceof Object) {
+                        newObj[key] = {}
+                        deepCloneTwo(item, newObj[key])
+                    } else {
+                        newObj[key] = item
+                    }
+                }
+            }
+
+            deepCloneTwo(obj, newObj)
+            console.log(obj)
+            console.log(newObj)
+
+            // let a = deepClone(obj)
+            // a.name = 'aa'
+            // a.ect.name = 'aa2'
+            // a.ect.age = 40
+
+            // console.log(a)
+            // console.log(obj)
         </script>
-        <div class="div-dird">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-        </div>
     </body>
 </html>

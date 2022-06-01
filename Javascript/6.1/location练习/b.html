@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>b</title>
+    </head>
+    <body>
+        <h1>B</h1>
+        <div></div>
+        <script>
+            // 自己的思路
+            // let value = location.search
+            // let a = value.split('&')
+            // let obj = {}
+            // console.log(a)
+            // a.forEach(function (ele, index) {
+            //     if (index === 0) {
+            //         ele.slice(0, 1)
+            //         console.log(ele.slice(1))
+            //         let b = ele.indexOf('=')
+            //         obj[ele.slice(1, b)] = ele.slice(b + 1)
+            //     } else {
+            //         let c = ele.indexOf('=')
+            //         obj[ele.slice(0, c)] = ele.slice(c + 1)
+            //     }
+            // })
+            // let div = document.querySelector('div')
+            // for (const key in obj) {
+            //     div.innerHTML += `${key}:${obj[key]}\n`
+            // }
+            // console.log(obj)
+
+            // 老师的思路
+            // 1. 获取数据
+            let str = location.search
+            // 2. 将字符转成对象
+            let obj = {}
+            str = str.slice(1)
+            console.log(str)
+            let arr = str.split('&')
+            console.log(arr)
+            arr.forEach(function (ele, index) {
+                let item = ele.split('=')
+                console.log(item)
+                obj[item[0]] = item[1]
+            })
+            console.log(obj)
+            // 3. 通过innerHTML渲染到页面上
+            let div = document.querySelector('div')
+            for (const key in obj) {
+                div.innerHTML += `<span>${key}</span>:<span>${obj[key]}</span>`
+            }
+        </script>
+    </body>
+</html>
