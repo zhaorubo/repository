@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" placeholder="输入用户名" class="uname" />
+        <input type="text" placeholder="输入密码" class="pwd" />
+        <input type="radio" value="1" id="male" name="sex" />
+        <label for="male">男</label>
+        <input type="radio" value="0" id="female" name="sex" />
+        <label for="female">女</label>
+        <input type="text" name="请输入金额" id="money" />请输入你的金钱
+        <textarea name="" id="long" cols="30" rows="10"></textarea>
+
+        <button>点我把信息传递个b页面</button>
+        <script>
+            let btn = document.querySelector('button')
+            let uname = document.querySelector('.uname')
+            let long = document.querySelector('#long')
+            let pwd = document.querySelector('.pwd')
+            let money = document.querySelector('#money')
+            let radios = document.querySelectorAll('input[type=radio]')
+            let val
+            radios.forEach((ele, index) => {
+                ele.addEventListener('click', function () {
+                    if (radios[index].checked) {
+                        val = radios[index].value
+                    }
+                })
+            })
+            btn.addEventListener('click', function () {
+                // 先点击查看字符拼接是否成功
+                let date = +new Date()
+                let unameVal = uname.value
+                let pwdVal = pwd.value
+                console.log(pwdVal)
+                let moneyVal = money.value
+                let longVal = long.value
+                let str = `./b.html?name=${unameVal}&pwd=${pwdVal}&money=${moneyVal}&long=${longVal}&sex=${val}&time=${date}`
+                location.assign(str)
+                console.log(str)
+            })
+        </script>
+    </body>
+</html>

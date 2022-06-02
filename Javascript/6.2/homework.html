@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <title>端午作业</title>
+    </head>
+    <body>
+        <div class="box">
+            <h1>DOM数组方法</h1>
+            <div class="main">
+                <div class="left-nav">
+                    <ul>
+                        <li class="user">添加账户👨‍🦳</li>
+                        <li class="dbMoney">资金翻倍💰</li>
+                        <li class="query">查询百万富翁💴</li>
+                        <li class="richList">财富榜↓</li>
+                        <li class="moneySum">计算总金额🧮</li>
+                    </ul>
+                </div>
+                <div class="right-main">
+                    <div class="header">
+                        <span>Person</span>
+                        <span>Wealth</span>
+                    </div>
+                    <div class="box-content"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let data = [
+            { name: 'English chan', money: 392001 },
+            { name: 'alex chan', money: 568932 },
+            { name: 'melon chan', money: 698756 },
+            { name: 'Clare Langner', money: 292489 },
+            { name: 'Abigail Rice', money: 953957 },
+            { name: 'Clarice Dias', money: 168472 },
+            { name: 'Vernon Lucas', money: 718225 },
+            { name: 'Nina Schmidt', money: 889147 }
+        ]
+        // 数字转千分位
+        function thouSand(num) {
+            num = '$' + num.toLocaleString() + '.00'
+            return num
+        }
+
+        // 字符串转数字 参数：一个字符串
+        function strToNum(string) {
+            let newStr = ''
+            arr = string.slice(1).slice(0, -3).split('')
+            arr = arr.filter(function (ele) {
+                return ele != ','
+            })
+            arr.forEach(ele => {
+                newStr += ele
+            })
+            return Number(newStr)
+        }
+
+        // 参数1 需要插入的父节点 参数2 需要渲染的数据
+        function createDivItem(obj) {
+            let div = document.createElement('div')
+            div.classList.add('content-item')
+            let span1 = document.createElement('span')
+            let span2 = document.createElement('span')
+            div.appendChild(span1)
+            div.appendChild(span2)
+            div.children[0].innerHTML = obj.name
+            div.children[1].innerHTML = thouSand(obj.money)
+            return div
+        }
+
+        let user = document.querySelector('.user')
+        let box = document.querySelector('.box-content')
+        let main = document.querySelector('.main')
+        let dbMoney = document.querySelector('.dbMoney')
+        let query = document.querySelector('.query')
+        let richList = document.querySelector('.richList')
+        let moneySum = document.querySelector('.moneySum')
+        let count = 0
+
+        // 添加账户
+        user.addEventListener('click', function () {
+            if (count == data.length) {
+                count = 0
+            }
+            box.appendChild(createDivItem(data[count]))
+            count++
+        })
+
+        // 资金翻倍
+        dbMoney.addEventListener('click', function () {
+            let content = document.querySelectorAll('.content-item')
+            for (let i = 0; i < content.length; i++) {
+                let num = thouSand(strToNum(content[i].children[1].innerHTML) * 2)
+                content[i].children[1].innerHTML = num
+            }
+        })
+
+        // 查询
+        query.addEventListener('click', function () {
+            let content = document.querySelectorAll('.content-item')
+            let arr = Array.from(content)
+            arr.forEach(ele => {
+                if (strToNum(ele.children[1].innerHTML) > 1000000) {
+                    box.appendChild(ele)
+                } else {
+                    ele.remove()
+                }
+            })
+        })
+
+        // 榜单
+        richList.addEventListener('click', function () {
+            let content = document.querySelectorAll('.content-item')
+            let arr = Array.from(content)
+
+            // arr[i].children[1].innerHTML
+            arr.sort((a, b) => {
+                return strToNum(b.children[1].innerHTML) - strToNum(a.children[1].innerHTML)
+            }).forEach(ele => {
+                box.appendChild(ele)
+            })
+        })
+
+        // 总额
+        moneySum.addEventListener('click', function () {
+            let content = document.querySelectorAll('.content-item')
+            let sumList = document.querySelector('.active')
+            let sum = 0
+            for (let i = 0; i < content.length; i++) {
+                sum += strToNum(content[i].children[1].innerHTML)
+            }
+            console.log(content)
+            if (!content.length) {
+                alert('当前没有账户,请添加账户')
+                return
+            }
+            if (sumList) {
+                sumList.remove()
+            }
+            let ele = createDivItem({ name: '总金额', money: sum })
+            ele.className = 'active'
+            main.appendChild(ele)
+        })
+    </script>
+</html>

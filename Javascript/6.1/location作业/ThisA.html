@@ -10,8 +10,8 @@
         <h2>这是a页面location可以帮助我们去完成页面传递数据其中一种</h2>
         <div class="first_div">
             <input type="text" class="name" /><input type="password" class="password" />
-            <input type="radio" data-index="0" name="sex" id="sex" value="man" />男
-            <input type="radio" data-index="1" name="sex" id="sex" value="weman" />女
+            <input type="radio" data-index="0" name="sex" value="man" />男
+            <input type="radio" data-index="1" name="sex" value="weman" />女
         </div>
         <div class="last_div">
             <label for="money"><input type="text" id="money" />请输入你的金钱</label>
@@ -27,19 +27,22 @@
         let money = document.querySelector('#money')
         let btn = document.querySelector('.btn')
         let textarea = document.querySelector('textarea')
-        let sexRadio = document.querySelectorAll('#sex')
         let sex = ''
-        console.log(sexRadio)
+        // console.log(sexRadio)
         btn.addEventListener('click', function () {
-            let str = `./ThisB.html?name=${name.value}&password=${password.value}&sex=${
-                sex == 0 ? sexRadio[0].value : sexRadio[1].value
-            }&money=${money.value}&textarea=${textarea.value}&time=${+new Date()}`
+            let str = `./ThisB.html?name=${name.value}&password=${
+                password.value
+            }&sex=${sex}&money=${money.value}&textarea=${textarea.value}&time=${+new Date()}`
             location.assign(str)
         })
+
         first_div.addEventListener('click', function (e) {
+            if (e.target.dataset == {}) {
+                sex = ''
+            }
             if (e.target.dataset.index == 0) {
                 sex = 'man'
-            } else {
+            } else if (e.target.dataset.index == 1) {
                 sex = 'weman'
             }
         })

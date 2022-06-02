@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button class="btn">点我回去a</button>
+        <div class="demo"></div>
+        <script>
+            // 4. 渲染的过程中也要做处理
+
+            // String to Obj
+
+            function getObj(data) {
+                let obj = {}
+                // 开始处理数据
+                data = data.substring(1)
+                data = data.split('&')
+                console.log(data)
+                data.forEach(ele => {
+                    let item = ele.split('=')
+                    obj[item[0]] = item[1]
+                })
+                return obj
+            }
+
+            function changeMoney(money) {
+                let newMoney = ''
+                newMoney = '$' + Number(money).toLocaleString() + '.00'
+                return newMoney
+            }
+            // 根据数据渲染到页面
+            function print(obj, node) {
+                node.innerHTML += `
+                                  <div>
+                                    <span>姓名</span>  
+                                    <span>${obj.name} ${Number(obj.sex) ? '先生' : '女士'}</span>
+                                  </div>
+                                  <div>
+                                    <span>密码</span>  
+                                    <span>${cover(obj.pwd)}</span>
+                                  </div>
+                                  <div>
+                                    <span>金额</span>  
+                                    <span>${changeMoney(obj.money)}</span>
+                                  </div>
+                                  <div>
+                                    <span>时间</span>  
+                                    <span>${time(obj.time)}</span>
+                                  </div>
+                                  <div>
+                                    <p>${moreStringNum(obj.long)}</p>
+                                    <span>填写内容</span>  
+                                    <span>${nextMaxNum != 0 ? moreStringNum(obj.long) : ''}</span>
+                                  </div>
+                                `
+            }
+
+            function cover(str) {
+                let newStr = ''
+                let back = str[str.length - 1]
+                let front = str[0]
+                newStr += front
+                for (let i = 0; i < str.length - 2; i++) {
+                    newStr += '*'
+                }
+                newStr += back
+                return newStr
+            }
+            // 1. 接受数据
+
+            function time(timeVal) {
+                let date = new Date(parseInt(timeVal))
+                let year = date.getFullYear()
+                let month = date.getMonth() + 1
+                let day1 = date.getDate() // 日期
+                let hour = date.getHours()
+                let minute = date.getMinutes()
+                let second = date.getSeconds()
+                let Time = `${year}-${month < 10 ? '0' + month : month}-${
+                    day1 < 10 ? '0' + day1 : day1
+                } ${hour < 10 ? '0' + hour : hour}:${minute < 10 ? '0' + minute : minute}:${
+                    second < 10 ? '0' + second : second
+                }`
+                return Time
+            }
+            let nextMaxNum = 0
+
+            function moreStringNum(str) {
+                let textObj = {}
+                for (let i = 0; i < str.length; i++) {
+                    if (textObj[str[i]]) {
+                        textObj[str[i]]++
+                    } else {
+                        textObj[str[i]] = 1
+                    }
+                }
+                let max = 0
+                let maxStr = ''
+                let nextMaxStr = 0
+                for (const key in textObj) {
+                    if (textObj[key] > max) {
+                        max = textObj[key]
+                        maxStr = key
+                    }
+                    if (max == textObj[key] && maxStr != key) {
+                        nextMaxNum = textObj[key]
+                        nextMaxStr = key
+                    }
+                }
+
+                let strr = `<p><span>最多的字符是：${nextMaxStr}</span>\n<span>出现的次数是：${nextMaxNum}</span></p>`
+
+                return str + strr
+            }
+            let str = decodeURIComponent(location.search)
+            // 2. 处理数据  字符 => 对象
+            let obj = getObj(str)
+            // 3. 渲染
+
+            let demo = document.querySelector('.demo')
+            print(obj, demo)
+            console.log(nextMaxNum)
+
+            let btn = document.querySelector('.btn')
+            btn.addEventListener('click', function () {
+                location.assign('./a的作业.html')
+            })
+        </script>
+    </body>
+</html>
