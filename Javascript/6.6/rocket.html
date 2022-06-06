@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .box {
+                width: 100%;
+                height: 3000px;
+                background-color: skyblue;
+            }
+            .rocket {
+                position: fixed;
+                right: 0;
+                top: 70%;
+                width: 148px;
+                height: 249px;
+                background-image: url('./rocket.png');
+                display: none;
+            }
+            .active {
+                animation: fire 1s infinite steps(4);
+            }
+            .rocket:hover {
+                background-position: -148px 0;
+            }
+            @keyframes fire {
+                from {
+                    background-position: -296px 0;
+                }
+                to {
+                    background-position: -892px 0;
+                }
+            }
+        </style>
+        <div class="box">
+            <div class="rocket"></div>
+        </div>
+        <script>
+            let rocket = document.querySelector('.rocket')
+            rocket.addEventListener('click', function () {
+                rocket.classList.add('active')
+                // 火箭移动距离 offsetTop + 火箭自身
+                let rocket_distance = rocket.offsetTop + rocket.offsetHeight
+                let rocket_v = rocket_distance / 50
+                let scroll_distance = document.documentElement.scrollTop
+                let scroll_v = scroll_distance / 50
+                // 开启定时器：火箭慢慢升空  需要做rocket_distance的递减
+                let timer = setInterval(function () {
+                    document.documentElement.scrollTop -= scroll_v
+                    console.log(rocket.style.top)
+                    rocket.style.top = `${rocket.offsetTop - rocket_v}px`
+                    if (document.documentElement.scrollTop == 0) {
+                        clearInterval(timer)
+                    }
+                }, 20)
+            })
+
+            window.addEventListener('scroll', function () {
+                if (document.documentElement.scrollTop > 600) {
+                    rocket.style.display = 'block'
+                }
+            })
+        </script>
+    </body>
+</html>
