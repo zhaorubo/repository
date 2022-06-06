@@ -60,7 +60,6 @@
             return Number(newStr)
         }
 
-        // 参数1 需要插入的父节点 参数2 需要渲染的数据
         function createDivItem(obj) {
             let div = document.createElement('div')
             div.classList.add('content-item')
@@ -95,8 +94,9 @@
         dbMoney.addEventListener('click', function () {
             let content = document.querySelectorAll('.content-item')
             for (let i = 0; i < content.length; i++) {
-                let num = thouSand(strToNum(content[i].children[1].innerHTML) * 2)
-                content[i].children[1].innerHTML = num
+                content[i].children[1].innerHTML = thouSand(
+                    strToNum(content[i].children[1].innerHTML) * 2
+                )
             }
         })
 
