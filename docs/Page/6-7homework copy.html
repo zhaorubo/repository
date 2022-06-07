@@ -72,6 +72,11 @@
     })
   }
 
+  function time(ms) {
+      min = Math.floor((ms / 1000 / 60))
+      sec = Math.floor((ms / 1000) % 60)
+      return min + ':' + sec
+  }
   // 生成tr
   // 1. 数据
   // 2. 要渲染的位置
@@ -83,7 +88,7 @@
             <td>${data.album.name}</td>
             <td>${data.artists[0].name}</td>
             <td>${data.name}</td>
-            <td>${data.duration}</td>
+            <td>${time(data.duration)}</td>
           `
     Ele.appendChild(tr)
   }
