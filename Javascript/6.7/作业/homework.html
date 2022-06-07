@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1" class="box box-re form-inline">
+    <input type="text" class="form-control" id="keywords" placeholder="搜索歌曲" value="">
+    
+    <button class="btn btn-info content" id="send">搜索</button>
+    
+    <div style="margin: 10px 0;">
+        <button class="btn btn-info content disable" id="prev">上一页</button>
+        <button class="btn btn-info content disable" id="next">下一页</button>
+    </div>
+
+    <div>
+        <audio id="player" src="" controls></audio>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+            <td>音乐标题</td>
+            <td>歌手</td>
+            <td>专辑</td>
+            <td>时长</td>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>3</td>
+          </tr> -->
+        </tbody>
+    </table>
+</body>
+<script>
+  let SearchIpt = document.querySelector('.form-control')
+  let SearchBtn = document.querySelector('#send')
+  let tbody = document.querySelector('.table tbody')
+  let player = document.querySelector('#player')
+  let prev = document.querySelector('#prev')
+  let next = document.querySelector('#next')
+  let obj = {
+    // inputVal:'林俊杰',
+    limit: 10,
+    offset: 1
+  }
+  // get 请求数据
+  // 1. URL
+  // 2. callback
+  function getData(url,cb) {
+    let xhr = new XMLHttpRequest()
+    let Turl = `http://netease.0melon0.cn${url}`
+    xhr.open('GET',Turl)
+    xhr.send()
+    xhr.addEventListener('readystatechange',function() {
+      if(xhr.readyState == 4 && xhr.status == 200)  {
+        let  data_d = JSON.parse(xhr.responseText)
+        if(data_d.result) {
+         let {result} = JSON.parse(xhr.responseText)
+          cb(result)
+        }else {
+          let {data} = JSON.parse(xhr.responseText)
+          cb(data)
+        }
+      }
+    })
+  }
+
+  // 生成tr
+  // 1. 数据
+  // 2. 要渲染的位置
+  function createEle(data,Ele) {
+    let tr = document.createElement('tr')
+    tr.classList.add('tr-item')
+    tr.setAttribute('data-id',data.id)
+    tr.innerHTML = `
+            <td>${data.album.name}</td>
+            <td>${data.artists[0].name}</td>
+            <td>${data.name}</td>
+            <td>${data.duration}</td>
+          `
+    Ele.appendChild(tr)
+  }
+
+  // 删除tr
+  function removeEle(ele) {
+    ele.forEach((e)=> {
+      e.remove()
+    })
+  }
+
+  tbody.addEventListener('click',(e) => {
+    let songs_id = e.target.parentElement.getAttribute('data-id')
+    let songsIdUrl = `/song/url?id=${songs_id}`
+    getData(songsIdUrl,function(data) {
+      if(data[0].url == null) {
+        alert('付费内容')
+        return
+      }
+      console.log(data);
+      player.setAttribute('autoplay', '')
+      player.src = data[0].url
+    })
+})
+
+  SearchBtn.addEventListener('click',function() {
+    let ValInput =  SearchIpt.value
+    let SearchURL = `/search?keywords=${ValInput}&limit=${obj.limit}&offset=${obj.offset}`
+    let trs = document.querySelectorAll('tr')
+    removeEle(trs)
+    getData(SearchURL,function(data) {
+      console.log(data);
+      data.songs.forEach(ele => {
+        createEle(ele,tbody)
+      })
+    })
+  })
+
+  prev.addEventListener('click',function() {
+    obj.offset--
+    let ValInput =  SearchIpt.value
+    let SearchURL = `/search?keywords=${ValInput}&limit=${obj.limit}&offset=${obj.offset}`
+    let trs = document.querySelectorAll('tr')
+    if(trs.length <= 1) {
+      return
+    }
+    removeEle(trs)
+    getData(SearchURL,function(data) {
+      if(obj.offset <= 0) {
+        obj.offset = 0
+        alert('已经是第一页了')
+        return
+      }else {
+        data.songs.forEach(ele => {
+        createEle(ele,tbody)
+      })
+      }
+      
+    })
+  })
+
+  next.addEventListener('click',function() {
+    obj.offset++
+    let ValInput =  SearchIpt.value
+    let SearchURL = `/search?keywords=${ValInput}&limit=${obj.limit}&offset=${obj.offset}`
+    let trs = document.querySelectorAll('tr')
+    if(trs.length <= 1) {
+        return
+    }
+    removeEle(trs)
+    getData(SearchURL,function(data) {
+        data.songs.forEach(ele => {
+          createEle(ele,tbody)
+        })
+      })
+  })
+  
+</script>
+</html>
+
+
+<!--  -->
