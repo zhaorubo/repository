@@ -1,0 +1,98 @@
+@import './comm';
+
+.content_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 78.67vw;
+  height: 111.87vw;
+  margin: 22.67vw auto;
+  background-color: var(--main-backgroundColor-);
+  box-shadow: 0vw 0.53vw 1.77vw #000;
+  border-radius: 1.33vw;
+
+  .select {
+    position: relative;
+    width: 30.13vw;
+    height: 3.6vw;
+    align-self: flex-start;
+    text-align: center;
+    line-height: 3.6vw;
+    font-size: 4vw;
+    color: var(--main-color-one-);
+    margin-left: 6.93vw;
+    margin-top: 10vw;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translate(100%, -50%);
+      right: 0;
+      text-align: center;
+    }
+
+
+    ul {
+      display: flex;
+      height: 40.6vw;
+      overflow-y: scroll;
+      flex-direction: column;
+      border-radius: 2vw;
+      background-color: var(--main-backgroundColor-);
+      display: none;
+
+      :first-child {
+        margin-top: 10px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .appointment_box {
+    overflow: scroll;
+
+    tbody {
+      overflow: scroll;
+      display: block;
+      width: 60vw;
+      height: 40vw;
+    }
+
+    tr {
+      display: flex;
+      justify-content: center;
+      margin: 5vw auto;
+    }
+
+    th {
+      width: 30vw;
+      font-size: 3.47vw;
+      color: var(--main-color-one-);
+    }
+
+    td {
+      text-align: center;
+      width: 30vw;
+      font-size: 3.47vw;
+      color: var(--main-font-color-);
+
+      button {
+        width: 18vw;
+        height: 6vw;
+        border-radius: 10vw;
+        background-color: skyblue;
+      }
+    }
+  }
+
+  .prompt {
+    font-size: 3.47vw;
+    color: var(--main-font-color-);
+    margin-bottom: 20vw;
+  }
+
+}

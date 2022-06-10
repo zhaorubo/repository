@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>debounce防抖 throttle节流</title>
+    </head>
+    <body>
+        <!-- 
+        防抖和节流 在前端性能优化环节
+        轮播图 => 开关
+        任何关于按钮的操作，都可以加上这样的防抖操作
+        目的: 点击多次都没有效果，只识别最后一次点击的操作
+       -->
+        <button>点击</button>
+        <script>
+            // 用户点击 n-1 次无效 只识别最后一次
+            // 制作一个防抖函数
+            let btn = document.querySelector('button')
+            // 按钮的事件处理函数
+            function btnClick(e) {
+                console.log('点击')
+                console.log(this)
+                console.log(e)
+            }
+            // 防抖函数
+            // 传入事件函数
+            // 传入防抖时间
+            // 是否立即执行  true 第一次  false 最后一次
+            function debounce(handle, wait, immeadiate) {
+                let timer = null
+                let init = null
+                console.log(arguments)
+                return function proxy(e) {
+                    // btn点击的时候触发
+                    // 把btn的this 保存给that
+                    let that = this
+                    // arg 保存 arguments 对象
+                    // let arg = arguments
+                    // console.log(arg)
+                    // 点击一次，就会执行一次
+                    // 连续点击触发定时器并马上清除
+                    init = immeadiate && !timer
+                    // 直到用户停止点击，才触发handle函数
+                    clearTimeout(timer)
+                    timer = setTimeout(() => {
+                        !immeadiate ? handle.call(that, e) : null
+                        timer = null
+                    }, wait)
+
+                    // 如何阻止 后面的点击
+                    init ? handle.call(that, e) : null
+                }
+            }
+            btn.addEventListener('click', debounce(btnClick, 300, false))
+        </script>
+    </body>
+</html>

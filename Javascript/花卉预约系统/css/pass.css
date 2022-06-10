@@ -1,0 +1,16 @@
+:root { --main-color-one-: #0057c1; --main-backgroundColor-: rgba(255, 255, 255, 0.5); --main-font-color-: #434242; }
+
+body { overflow: hidden; }
+
+* { margin: 0; padding: 0; list-style: none; text-decoration: none; border: none; }
+
+.bgc_img_box { position: absolute; bottom: 0; left: 0; height: 700px; width: 100vw; background: url("../assets/images/bgc.png"); background-size: cover; z-index: -1; }
+
+.content_box { display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 78.67vw; height: 111.87vw; box-sizing: border-box; margin: 22.67vw auto; background-color: var(--main-backgroundColor-); box-shadow: 0vw 0.53vw 1.77vw #000; border-radius: 1.33vw; padding: 0 3.73vw; }
+.content_box .qr_code_box { width: 35.33vw; height: 35.33vw; border: solid 0.53vw var(--main-font-color-); }
+.content_box h5 { font-size: 3.47vw; color: var(--main-font-color-); text-indent: 10vw; margin-top: 5vw; }
+.content_box .user_title { position: relative; align-self: flex-start; height: 1vw; text-align: center; margin-top: 10vw; }
+.content_box .user_title::after { content: ''; display: block; width: calc(78.67vw / 2 - 1vw); border-bottom: 1px solid #000; }
+.content_box .user_title::before { position: absolute; right: 0; content: ':'; }
+.content_box .save_btn { width: 24.93vw; height: 7.6vw; border-radius: 3.8vw; color: var(--main-color-one-); background-color: #fff; font-size: 3.2vw; box-shadow: 0vw 0.53vw 0.56vw 0.11vw rgba(0, 0, 0, 0.39); }
+.content_box .prompt { font-size: 3.47vw; color: var(--main-font-color-); line-height: 5.6vw; }

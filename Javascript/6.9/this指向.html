@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>this指向</title>
+    </head>
+    <body>
+        <!-- 
+        所有的编程语言中，都会出现this   
+        this也是所有编程语言中比较麻烦
+        为什么会有this呢？
+        编程语言中都会有就近原则  this执行环境上下文（作用域）
+        作用？
+        方便程序在多种环境下执行。
+
+        this指向的结论：
+        1. 普通函数在script中调用  this是指向window
+        2. 当一个函数在对象内部时，该对象调用该函数，该this指向该对象
+        3. 当一个函数在对象内部，函数赋值给全局变量之后再调用函数
+           该this指向就指向window
+        4. 当一个函数再对象方法中被定义，该函数会被视为普通函数
+           回到结论1  this指向window
+        总结：谁调用这个函数，this就指向谁
+
+
+        箭头函数
+        是什么？ 
+        本质上也是一个函数，是普通函数升级版的写法（更加简洁）
+        1. 语法结构
+       -->
+        <input type="text" class="ipt" />
+        <input type="text" class="ipt1" />
+        <script>
+            var a = 2
+            let obj = {
+                a: 1,
+                fn: function () {
+                    // 1. this 是写在箭头函数中
+                    // 2. this 在箭头中式没有this指向的
+                    // 3. 看作用域 fn的作用域
+                    // 4. 看谁调用fn  ，看出obj
+                    // 5. this 指向 obj
+                    // 6. 最终输出1
+                    let fn2 = () => {
+                        console.log(this.a)
+                    }
+                    return fn2()
+                }
+            }
+            obj.fn()
+
+            // var a = 1
+            // let obj = {
+            //     a: 2,
+            //     fn: () => {
+            //         console.log(this.a)
+            //     }
+            // }
+            // obj.fn()
+            // let fn = () => {
+            //     console.log(this)
+            // }
+            // fn()
+
+            // let fn = (a,b) => { console.log(a,b)}
+            // fn(1,2)
+
+            // let fn1 = a => {console.log(a)}
+            // fn1(2)
+            // var city = '广州'
+            // let obj2 = {
+            //     city: '杭州'
+            // }
+            // let obj = {
+            //     city: '上海',
+            //     fn(msg, num) {
+            //         console.log(this.city + msg + num)
+            //     }
+            // }
+
+            // 箭头函数
+
+            // obj.fn('真不错')
+            // 希望 输出 广州真不错  this指向从obj => window
+            // call(你要改变的目标对象,实参) 改变this指向
+            // obj.fn.call(window, '真不错')
+            // apply()
+            // obj.fn.apply(window, ['真不错', 100])
+            // bind()
+            // obj.fn.bind(obj2, '真不错', 100)()
+            // 经典面试题：call apply bind 的不同？
+
+            // let ipt = document.querySelector('.ipt')
+            // let ipt1 = document.querySelector('.ipt1')
+            // function fn() {
+            //     console.log(this.value)
+            // }
+            // ipt1.addEventListener('input', fn)
+            // ipt.addEventListener('input', fn)
+
+            // var a = 2
+            // let obj = {
+            //     a: 1,
+            //     fn() {
+            //         // console.log('alex')
+            //         // console.log(this) // this 指向的时obj
+            //         console.log(this.a)
+            //     }
+            // }
+            // console.log(obj.a)
+            // console.log(obj['a'])
+            // obj.fn()
+
+            // function fn() {
+            //     let a = 1
+            //     console.log(a)
+            //     console.log(this)
+            // }
+            // // window 挂上fn()
+            // window.fn()
+
+            // let w = obj.fn
+            // w()
+        </script>
+    </body>
+</html>

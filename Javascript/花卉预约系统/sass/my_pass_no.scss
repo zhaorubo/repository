@@ -1,0 +1,39 @@
+@import './comm';
+
+
+.main {
+  width: 78.67vw;
+  height: 74.53vw;
+  margin: 26.68vw auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .title {
+    color: var(--main-color-one-);
+    font-size: 4vw;
+    line-height: 5.6vw;
+  }
+
+  .msg_box {
+    width: 78.67vw;
+    height: 50.67vw;
+    background-color: var(--main-backgroundColor-);
+    box-shadow: 0vw 0.53vw 1.77vw 0.63vw rgba(0, 0, 0, 0.3);
+    border-radius: 1.33vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .user_name {
+      margin-bottom: 10.13vw;
+    }
+
+    p {
+      letter-spacing: 0.2vw;
+      color: var(--main-color-one-);
+      font-size: 4vw;
+    }
+  }
+}

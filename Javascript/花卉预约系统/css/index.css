@@ -1,0 +1,25 @@
+@charset "UTF-8";
+:root { --main-color-one-: #0057c1; --main-backgroundColor-: rgba(255, 255, 255, 0.5); --main-font-color-: #434242; }
+
+body { overflow: hidden; }
+
+* { margin: 0; padding: 0; list-style: none; text-decoration: none; border: none; }
+
+.bgc_img_box { position: absolute; bottom: 0; left: 0; height: 700px; width: 100vw; background: url("../assets/images/bgc.png"); background-size: cover; z-index: -1; }
+
+.main { width: 76.8vw; height: 108.8vw; margin: 14vw auto; }
+.main .logo { margin: 0 auto; width: 29vw; height: 26vw; }
+.main .logo img { width: 100%; height: 100%; }
+.main .user_messages { display: flex; flex-direction: column; justify-content: space-between; margin-top: 18.67vw; width: 76.8vw; height: 50vw; }
+.main .user_messages input { position: relative; box-sizing: border-box; opacity: .5; outline: none; position: relative; width: 100%; height: 10.13vw; border-radius: 5vw; padding-left: 15vw; background-color: #fff; z-index: 99; }
+.main .user_messages .name, .main .user_messages .iphone, .main .user_messages .id_card { position: relative; }
+.main .user_messages .name p, .main .user_messages .iphone p, .main .user_messages .id_card p { position: absolute; border-radius: 10vw; text-align: center; margin-left: 20vw; width: 50%; border: 1px solid #046a73; border-top: 0; border-bottom: 0; height: 80%; top: 0; left: 0; transition: all .5s ease; line-height: 10vw; font-size: 3.47vw; }
+.main .user_messages .name .p_active, .main .user_messages .iphone .p_active, .main .user_messages .id_card .p_active { opacity: 1 !important; transform: translate(0, -100%) !important; color: #079d07; }
+.main .user_messages .name .p_active_remove, .main .user_messages .iphone .p_active_remove, .main .user_messages .id_card .p_active_remove { opacity: 1 !important; transform: translate(0, -100%) !important; color: #a93636; }
+.main .user_messages .name .p_clear, .main .user_messages .iphone .p_clear, .main .user_messages .id_card .p_clear { opacity: 0 !important; transform: translate(0, 0) !important; }
+.main .user_messages .name::after { content: '姓名:'; position: absolute; top: 50%; left: 5.47vw; z-index: 11; transform: translateY(-50%); color: #000; font-size: 3.47vw; }
+.main .user_messages .iphone::after { content: '+86'; position: absolute; top: 50%; left: 5.47vw; z-index: 11; transform: translateY(-50%); color: #000; font-size: 3.47vw; }
+.main .user_messages .id_card input { padding-left: 25vw; }
+.main .user_messages .id_card::after { content: '身份证号码:'; position: absolute; top: 50%; left: 5.47vw; z-index: 11; transform: translateY(-50%); color: #000; font-size: 3.47vw; }
+.main .btn_list { display: flex; justify-content: space-between; margin-top: 10.27vw; }
+.main .btn_list button { width: 32.67vw; height: 10.13vw; border-radius: 5vw; opacity: .88; color: var(--main-color-one-); box-shadow: -1px 1px 2px #000; }

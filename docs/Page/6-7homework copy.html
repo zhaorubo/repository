@@ -84,7 +84,7 @@
     let tr = document.createElement('tr')
     tr.classList.add('tr-item')
     tr.setAttribute('data-id',data.id)
-    tr.innerHTML = `
+    tr.innerHTML += `
             <td>${data.album.name}</td>
             <td>${data.artists[0].name}</td>
             <td>${data.name}</td>
