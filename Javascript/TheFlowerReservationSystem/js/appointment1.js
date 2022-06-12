@@ -61,45 +61,57 @@ function selectFn(e) {
             data.list.forEach(ele => {
                 createTr(ele)
             })
+            // // 状态渲染
+            // Array.from(tbody.children).forEach(elel => {
+            //     // let num = ele.firstElementChild.innerHTML.split('-')
+            //     // let timeOne = num[0]
+            //     // let timeTwo = num[1]
+            //     // num = +new Date(num)
+            //     // num = +new Date(`${select.firstElementChild.innerHTML} ${timeOne}`)
+            //     // timeTwo = +new Date(`${select.firstElementChild.innerHTML} ${timeTwo}`)
+            //     // console.log(num)
+            //     // 列表时间
+            //     let time = nowTime()
+            //     let day = select.firstElementChild
+            //     day = Number(day.innerHTML.split('-')[2])
+            //     console.log(num)
+            //     console.log(time.day1)
+            //     data.list.forEach(ele => {
+            //         let num = +new Date(`${ele.day_time} ${ele.show_name}`)
+            //         if (num > time.day1) {
+            //             elel.lastElementChild.firstElementChild.innerHTML = '可预约'
+            //         } else if (time.day1 > num) {
+            //             console.log('guoqi')
+            //             elel.lastElementChild.firstElementChild.setAttribute('disabled', 'disabled')
+            //             elel.lastElementChild.firstElementChild.innerHTML = '已过期'
+            //         }
+            //     })
 
-            // 状态渲染
-            Array.from(tbody.children).forEach(ele => {
-                let num = ele.firstElementChild.innerHTML.split('-')
-                num = Number(num[1].split(':')[0])
-                let time = nowTime()
-                let day = select.firstElementChild
-                day = Number(day.innerHTML.split('-')[2])
-                if (num < time.hour && time.day < day) {
-                    ele.lastElementChild.firstElementChild.innerHTML = '可预约'
-                } else {
-                    ele.lastElementChild.firstElementChild.setAttribute('disabled', 'disabled')
-                    ele.lastElementChild.firstElementChild.innerHTML = '已过期'
-                }
-                getReport(function (res) {
-                    console.log(res)
-                    Array.from(res.result).forEach(ele => {
-                        let a = +new Date(ele.day_time)
-                        let resId = ele.show_id
-                        Array.from(tbody.children).forEach(ele => {
-                            let b = +new Date(ele.getAttribute('data-time'))
+            //     getReport(function (res) {
+            //         console.log(res)
+            //         Array.from(res.result).forEach(ele => {
+            //             let a = +new Date(ele.day_time)
+            //             let resId = ele.show_id
+            //             Array.from(tbody.children).forEach(ele => {
+            //                 let b = +new Date(ele.getAttribute('data-time'))
 
-                            if (
-                                ele.firstElementChild.getAttribute('data-id') == resId &&
-                                a == b &&
-                                time.day < day
-                            ) {
-                                ele.lastElementChild.firstElementChild.setAttribute(
-                                    'disabled',
-                                    'disabled'
-                                )
+            //                 if (
+            //                     ele.firstElementChild.getAttribute('data-id') == resId &&
+            //                     a == b &&
+            //                     time.day < day
+            //                 ) {
+            //                     ele.lastElementChild.firstElementChild.setAttribute(
+            //                         'disabled',
+            //                         'disabled'
+            //                     )
 
-                                ele.lastElementChild.firstElementChild.innerHTML = '不可预约'
-                            }
-                        })
-                    })
-                    let a = +new Date(res.result[0].day_time)
-                })
-            })
+            //                     ele.lastElementChild.firstElementChild.innerHTML = '不可预约'
+            //                 }
+            //             })
+            //         })
+            //         let a = +new Date(res.result[0].day_time)
+            //     })
+            // })
         })
     } else if (e.target.localName == 'span') {
         if (num % 2 == 0) {
@@ -133,8 +145,8 @@ function nowTime() {
     // console.log(timeDay)
     // console.log(time)
     let obj = {
-        hour: hour,
-        day1: +new Date(`${year}-${month}-${day1}`),
+        hour: +new Date(hour),
+        day1: +new Date(`${year}-${month}-${day1} ${hour}:${minute}`),
         day: day1
     }
     return obj
@@ -162,7 +174,7 @@ tbody.addEventListener('click', e => {
                         id: e.target.parentElement.previousElementSibling.getAttribute('data-id')
                     },
                     function (res) {
-                        // location.assign('../css/pass.css')
+                        location.assign(`../page/pass.html?token=${token}`)
                         console.log(res)
                     }
                 )

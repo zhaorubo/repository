@@ -19,6 +19,11 @@
     width: 35.33vw;
     height: 35.33vw;
     border: solid 0.53vw var(--main-font-color-);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   h5 {

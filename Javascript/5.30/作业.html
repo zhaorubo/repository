@@ -79,6 +79,7 @@
               sort.addEventListener('click', () => {
                 let tr = document.querySelectorAll('tr:not(:first-child)')
                 let tr_arr = Array.from(tr)
+                console.log(tr_arr);
               tr_arr.sort(function(a,b) {
                return a.firstElementChild.nextElementSibling.innerText - b.firstElementChild.nextElementSibling.innerText
               })

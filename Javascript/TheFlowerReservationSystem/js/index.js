@@ -29,6 +29,24 @@ function fetch_msg(bool, obj, cb) {
     }
 }
 
+// 获取预约记录
+function getFetchRecord(obj, cb) {
+    let url = `http://newshopapi.0melon0.cn/api/f_user/report`
+    fetch(url, {
+        method: 'POST',
+        body: `phone=${obj.phone}&name=${obj.name}`,
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+        }
+    })
+        .then(function (res) {
+            return res.json()
+        })
+        .then(function (res) {
+            cb(res)
+        })
+}
+
 function alertFn(yesmsg, nomsg, length, ele, i) {
     if (!Number(ele)) {
         userMsg.children[i].lastElementChild.innerHTML = nomsg
@@ -67,8 +85,22 @@ myBtn.addEventListener('click', function () {
         if (res.msg == '登录成功') {
             console.log(res)
             sessionStorage.setItem('token', res.result.token)
-
-            location.assign('../page/my_pass.html')
+            getFetchRecord(
+                {
+                    phone: iptPhone.value,
+                    name: iptName.value
+                },
+                res => {
+                    console.log(res)
+                    if (res.result.length != 0) {
+                        location.assign(
+                            `../page/my_pass.html?phone=${iptPhone.value}&name=${iptName.value}&card=${iptCard.value}`
+                        )
+                    } else {
+                        location.assign('../page/my_pass_no.html')
+                    }
+                }
+            )
         } else {
             alert('登陆失败')
         }
@@ -86,7 +118,7 @@ startBtn.addEventListener('click', function () {
         console.log(res)
         if (res.msg == '登录成功') {
             sessionStorage.setItem('token', res.result.token)
-            let str = `../page/appointment.html?phone=${iptPhone.value}&name=${iptName.value}`
+            let str = `../page/appointment.html?phone=${iptPhone.value}&name=${iptName.value}&card=${iptCard.value}`
             location.assign(str)
             console.log(res)
         } else {
